@@ -8,7 +8,10 @@ class TSizes {
   static const double md = 10.0;
   static const double lg = 15.0;
   static const double xl = 20.0;
-  static const double pScreen = 30.0;
+
+  // Padding: Screen
+  static const double screenHorizontal = 30.0;
+  static const double screenVertical = 50.0;
 
   // Logo 
   static const double logoSm = 75.0;

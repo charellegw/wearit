@@ -10,10 +10,9 @@ class TImages {
   static const String banner3 = "";
 
   // Onboarding
-  static const String onboarding1 = "assets/images/onboarding/Online-shopping-bro-1.png";
-  static const String onboarding2 = "assets/images/onboarding/Online-shopping-bro-2.png";
-  static const String onboarding3 = "assets/images/onboarding/Online-shopping-bro-3.png";
-
+  static const String onboarding1 = "assets/images/onboarding/online_shopping_1.png";
+  static const String onboarding2 = "assets/images/onboarding/online_shopping_2.png";
+  static const String onboarding3 = "assets/images/onboarding/online_shopping_3.png";
   // Icons: Category
   static const String iClothes = "";
   static const String iPants = "";

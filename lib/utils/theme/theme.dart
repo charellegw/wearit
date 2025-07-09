@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wearit/utils/constants/colors.dart';
 import 'custom_theme/app_bar_theme.dart';
 import 'custom_theme/bottom_sheet_theme.dart';
 import 'custom_theme/checkbox_theme.dart';
@@ -16,7 +17,7 @@ class TAppTheme {
     fontFamily: 'Montserrat',
     brightness: Brightness.light,
     primaryColor: Colors.blue,
-    scaffoldBackgroundColor: Colors.white,
+    scaffoldBackgroundColor: TColors.backgroundLight,
     appBarTheme: TAppBarTheme.lightAppBarTheme,
     bottomSheetTheme: TBottomSheetTheme.lightBottomSheetTheme,
     checkboxTheme: TCheckBoxTheme.lightCheckboxTheme,
@@ -32,7 +33,7 @@ class TAppTheme {
     fontFamily: 'Montserrat',
     brightness: Brightness.dark,
     primaryColor: Colors.blue,
-    scaffoldBackgroundColor: Colors.black,
+    scaffoldBackgroundColor: TColors.backgroundDark,
     appBarTheme: TAppBarTheme.darkAppBarTheme,
     bottomSheetTheme: TBottomSheetTheme.darkBottomSheetTheme,
     checkboxTheme: TCheckBoxTheme.darkCheckboxTheme,
