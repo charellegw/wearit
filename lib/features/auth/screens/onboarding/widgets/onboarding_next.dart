@@ -16,7 +16,7 @@ class OnboardingNext extends StatelessWidget {
       bottom: TDeviceUtils.getBottomNavigationHeight(),
       right: TSizes.screenHorizontal,
       child: SizedBox(
-        width: 140,
+        width: TSizes.buttonWidth,
         height: TSizes.buttonHeight,
         child: Obx(() => ElevatedButton(
           onPressed: () => OnboardingController.instance.nextPage(), 
@@ -27,7 +27,7 @@ class OnboardingNext extends StatelessWidget {
             backgroundColor: TColors.buttonPrimary,
           ),
           child: Text(OnboardingController.instance.nextButtonText()),
-        )),
+        ),),
       ),
     );
   }

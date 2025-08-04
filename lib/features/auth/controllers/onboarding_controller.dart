@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:wearit/features/auth/screens/login/login.dart';
 
 class OnboardingController extends GetxController{
   static OnboardingController get instance => Get.find();
@@ -11,26 +12,26 @@ class OnboardingController extends GetxController{
 
   void dotNavigationClick(index) {
     currentPageIndex.value = index;
-    pageController.jumpTo(index);
+    pageController.jumpToPage(index);
   }
   
   void nextPage() {
     if(currentPageIndex.value == 2){
-      // Get.to(LoginScreen());
+      Get.to(Login());
     } else {
-      int index = currentPageIndex.value;
+      int index = currentPageIndex.value + 1;
       pageController.jumpToPage(index);
     }
   }
   
   void skipPage() {
     currentPageIndex.value = 2;
-    pageController.jumpTo(2);
+    pageController.jumpToPage(2);
   }
 
   String nextButtonText() {
     if(currentPageIndex.value == 2){
-      return "Get Started";
+      return "Start";
     } else {
       return "Next";
     }

@@ -13,6 +13,11 @@ class TImages {
   static const String onboarding1 = "assets/images/onboarding/online_shopping_1.png";
   static const String onboarding2 = "assets/images/onboarding/online_shopping_2.png";
   static const String onboarding3 = "assets/images/onboarding/online_shopping_3.png";
+
+  // Icons: Auth
+  static const String iGoogle = "assets/icons/auth/Eye.png";
+  static const String iFacebook = "assets/icons/auth/Eye_slash.png";
+
   // Icons: Category
   static const String iClothes = "";
   static const String iPants = "";
@@ -34,8 +39,6 @@ class TImages {
   // Icons: Utility
   static const String iSearch = "";
   static const String iFilter = "";
-  static const String iEye = "";
-  static const String iEyeSlash = "";
 
   // Icons: Brands
   static const String iNike = "";

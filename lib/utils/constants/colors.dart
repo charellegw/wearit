@@ -18,15 +18,21 @@ class TColors {
   // Container Background
   static const Color containerLight = Colors.white;
   static const Color containerDark = Colors.black;
+  static const Color containerLightGrey = Color(0XFFECECEC);
 
   // Button Background
   static const Color buttonPrimary = primaryColor;
   static const Color buttonSecondary = Colors.white;
+  static const Color buttonSecondaryDark = Colors.black;
   // static const Color buttonDisabled = Color();
 
   // Border Line
   static const Color borderPrimary = primaryColor;
-  static const Color borderSecondary = Color(0XFFECECEC);
+  // static const Color borderSecondary = Color(0XFFECECEC);
+  static const Color borderSecondary = Color(0XFFA1AAB2);
+
+  // Divider
+  static const Color divider = Color(0XFFA1AAB2);
 
   // System
   static const Color errorRed = Color(0XFFFF6F79);
