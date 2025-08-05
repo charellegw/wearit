@@ -1,20 +1,22 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:wearit/features/auth/screens/password_configuration/forgot_password.dart';
+import 'package:wearit/features/auth/screens/signup/signup.dart';
 import 'package:wearit/utils/constants/colors.dart';
 import 'package:wearit/utils/constants/sizes.dart';
 import 'package:wearit/utils/constants/text_string.dart';
+import 'package:wearit/utils/helpers/helper.dart';
 
 class LoginForm extends StatelessWidget {
   const LoginForm({
     super.key,
-    required this.isDark,
   });
-
-  final bool isDark;
 
   @override
   Widget build(BuildContext context) {
+    final isDark = THelper.isDarkMode(context);
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: TSizes.bigSectionGap),
       child: Form(child: Column(
@@ -56,7 +58,7 @@ class LoginForm extends StatelessWidget {
               ),
               
               TextButton(
-                onPressed: (){}, 
+                onPressed: () => Get.to(() => ForgotPasswordScreen()), 
                 style: TextButton.styleFrom(
                   padding: EdgeInsets.all(TSizes.sm),
                   minimumSize: Size(0, 0),
@@ -87,7 +89,7 @@ class LoginForm extends StatelessWidget {
                 width: double.infinity,
                 height: TSizes.buttonHeight,
                 child: ElevatedButton(
-                  onPressed: (){}, 
+                  onPressed: () => Get.to(() => const SignupScreen()), 
                   style: ElevatedButton.styleFrom(
                     foregroundColor: isDark ? TColors.textWhite : TColors.textPrimary,
                     backgroundColor: isDark ? TColors.buttonSecondaryDark : TColors.buttonSecondary,

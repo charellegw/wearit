@@ -17,7 +17,7 @@ class OnboardingController extends GetxController{
   
   void nextPage() {
     if(currentPageIndex.value == 2){
-      Get.to(Login());
+      Get.to(LoginScreen());
     } else {
       int index = currentPageIndex.value + 1;
       pageController.jumpToPage(index);

@@ -30,20 +30,8 @@ class TSizes {
   static const double iconSm = 20.0;
   static const double iconMd = 30.0;
 
-  // Font: Header
-  static const double h1 = 28.0;
-  static const double h2 = 22.0;
-  static const double h3 = 20.0;
-  static const double h4 = 18.0;
-  static const double h5 = 16.0;
-  static const double h6 = 12.0;
-
-  // Font: Body
-  static const double bodyXs = 8.0;
-  static const double bodySm = 10.0;
-  static const double bodyMd = 12.0;
-  static const double bodyLg = 14.0;
-  static const double bodyXl = 16.0;
+  // Navbar
+  static const double navbarHeight = 65.0;
 
   // Button
   static const double buttonHeight = 42.0;
@@ -67,12 +55,11 @@ class TSizes {
   static const double textFieldPadding = 14.0;
   static const double textFieldGap = 15.0;
 
-
   // Image
   static const double thumbnailSm = 80.0;
   static const double thumbnailLg = 150.0;
-  static const double bannerWidth = 342.0;
-  static const double bannerHeight = 192.0;
+  static const double imageLg = 342.0;
+  static const double imageMd = 192.0;
 
   // Divider
   static const double dividerHeight = 1.0;

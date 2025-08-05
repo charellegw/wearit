@@ -47,6 +47,7 @@ flutter:
     - assets/icons/auth/
     - assets/icons/category/
     - assets/images/onboarding/
+    - assets/images/status/
     - assets/logos/
 
   #--Local Fonts--#

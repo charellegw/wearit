@@ -14,9 +14,13 @@ class TImages {
   static const String onboarding2 = "assets/images/onboarding/online_shopping_2.png";
   static const String onboarding3 = "assets/images/onboarding/online_shopping_3.png";
 
+  // Status
+  static const String emailSent = "assets/images/status/email_sent.png";
+  static const String createAccountSuccess = "assets/images/status/create_account_success.png";
+
   // Icons: Auth
-  static const String iGoogle = "assets/icons/auth/Eye.png";
-  static const String iFacebook = "assets/icons/auth/Eye_slash.png";
+  static const String iGoogle = "assets/icons/auth/google.png";
+  static const String iFacebook = "assets/icons/auth/facebook.png";
 
   // Icons: Category
   static const String iClothes = "";
