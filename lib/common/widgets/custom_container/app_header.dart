@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:wearit/common/custom_container/blur_filter.dart';
-import 'package:wearit/common/custom_container/circular_container.dart';
-import 'package:wearit/common/custom_container/curved_clip_path.dart';
+import 'package:wearit/common/widgets/custom_container/blur_filter.dart';
+import 'package:wearit/common/widgets/custom_container/circular_container.dart';
+import 'package:wearit/common/widgets/custom_container/curved_clip_path.dart';
 import 'package:wearit/utils/constants/colors.dart';
 
 class TAppHeader extends StatelessWidget {
@@ -26,6 +26,7 @@ class TAppHeader extends StatelessWidget {
               TBlurFilter(),
               // Positioned(top: -80, right: -120, child: TCircularContainer(colorAlpha: 20,),),
               // Positioned(top: -80, right: -100, child: TCircularContainer(width: 250, height: 250, colorAlpha: 20,),),
+              child, 
             ],
           ),
         ),

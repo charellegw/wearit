@@ -39,6 +39,7 @@ class TSizes {
   static const double buttonWidth = 100.0;
   static const double buttonElevation = 4.0;
   static const double buttonGap = 15.0;
+  static const double iconButtonSize = 38.0;
 
   // Button: Radius
   static const double buttonRadius = 10.0;
