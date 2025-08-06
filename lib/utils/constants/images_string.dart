@@ -31,11 +31,7 @@ class TImages {
   static const String iAccs = "";
 
   // Icons: Navigation
-  static const String iHome = "";
-  static const String iShop = "";
-  static const String iWishlist = "";
-  static const String iCart = "";
-  static const String iAccount = "";
+  static const String iAccount = "assets/icons/auth/user.svg";
 
   // Icons: Profile
   static const String profilePicture = "";

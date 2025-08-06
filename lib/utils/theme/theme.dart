@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wearit/utils/constants/colors.dart';
+import 'package:wearit/utils/theme/custom_theme/navigation_bar_theme.dart';
 import 'custom_theme/app_bar_theme.dart';
 import 'custom_theme/bottom_sheet_theme.dart';
 import 'custom_theme/checkbox_theme.dart';
@@ -26,6 +27,7 @@ class TAppTheme {
     outlinedButtonTheme: TOutlinedButtonTheme.lightOutlinedButtonTheme,
     inputDecorationTheme: TTextFieldTheme.lightInputDecorationTheme,
     textTheme: TTextTheme.lightTextTheme,
+    navigationBarTheme: TNavbarTheme.lightNavbarTheme,
   );
 
   static ThemeData darkTheme = ThemeData(
@@ -42,5 +44,6 @@ class TAppTheme {
     outlinedButtonTheme: TOutlinedButtonTheme.darkOutlinedButtonTheme,
     inputDecorationTheme: TTextFieldTheme.darkInputDecorationTheme,
     textTheme: TTextTheme.darkTextTheme,
+    navigationBarTheme: TNavbarTheme.darkNavbarTheme,
   );
 }

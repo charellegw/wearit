@@ -31,7 +31,8 @@ class TSizes {
   static const double iconMd = 30.0;
 
   // Navbar
-  static const double navbarHeight = 65.0;
+  static const double navbarHeight = 85.0;
+  static const double navbarIcons = 26.0;
 
   // Button
   static const double buttonHeight = 42.0;

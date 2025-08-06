@@ -6,23 +6,19 @@ class TTexts {
 
   // Onboarding
   static const String onboardingTitle1 = "Start discovering your unique style";
-  static const String onboardingCaption1 =
-      "Welcome to a world of limitless style of fashion.";
+  static const String onboardingCaption1 = "Welcome to a world of limitless style of fashion.";
 
   static const String onboardingTitle2 = "Choose your preferred payment method";
-  static const String onboardingCaption2 =
-      "Easy checkout with seamless transaction.";
+  static const String onboardingCaption2 = "Easy checkout with seamless transaction.";
 
   static const String onboardingTitle3 = "Fast Delivery";
-  static const String onboardingCaption3 =
-      "We deliver your order safely and contactless delivery.";
+  static const String onboardingCaption3 = "We deliver your order safely and contactless delivery.";
 
   // Auth: Login
   static const String loginTitle = "Welcome back,";
   static const String loginSubtitle = "Please login to your account";
   static const String signupTitle = "Let’s create your account";
-  static const String signupSubtitle =
-      "Please fill your data to create your account";
+  static const String signupSubtitle = "Please fill your data to create your account";
   static const String loginButton = "Login";
   static const String createAccountButton = "Create Account";
   static const String signUpButton = "Sign Up";

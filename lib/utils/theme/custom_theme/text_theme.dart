@@ -16,8 +16,13 @@ class TTextTheme {
   );
 
   static TextTheme darkTextTheme = TextTheme(
-    headlineLarge: const TextStyle().copyWith(fontSize: 20, fontWeight: FontWeight.w700, color: Colors.white),
-    headlineMedium: const TextStyle().copyWith(fontSize: 18, fontWeight: FontWeight.w700, color: Colors.white),
-    headlineSmall: const TextStyle().copyWith(fontSize: 12, fontWeight: FontWeight.w600, color: Colors.white),
+    headlineLarge: const TextStyle().copyWith(fontSize: 18, fontWeight: FontWeight.w700, color: Colors.white), //H3
+    headlineMedium: const TextStyle().copyWith(fontSize: 16, fontWeight: FontWeight.w700, color: Colors.white), //H5
+    headlineSmall: const TextStyle().copyWith(fontSize: 12, fontWeight: FontWeight.w600, color: Colors.white), //H6
+    bodyLarge: const TextStyle().copyWith(fontSize: 16, fontWeight: FontWeight.w600, color: Colors.white), //body 16
+    bodyMedium: const TextStyle().copyWith(fontSize: 14, fontWeight: FontWeight.w500, color: Colors.white), //body 14
+    bodySmall: const TextStyle().copyWith(fontSize: 12, fontWeight: FontWeight.w500, color: Colors.white), //body 12
+    labelLarge: const TextStyle().copyWith(fontSize: 10, fontWeight: FontWeight.w500, color: Colors.white), //body 10
+    labelMedium: const TextStyle().copyWith(fontSize: 8, fontWeight: FontWeight.w500, color: Colors.white), //body 8
   );
 }

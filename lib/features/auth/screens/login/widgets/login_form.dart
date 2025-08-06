@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:wearit/features/auth/screens/password_configuration/forgot_password.dart';
 import 'package:wearit/features/auth/screens/signup/signup.dart';
+import 'package:wearit/navigation_menu.dart';
 import 'package:wearit/utils/constants/colors.dart';
 import 'package:wearit/utils/constants/sizes.dart';
 import 'package:wearit/utils/constants/text_string.dart';
@@ -80,7 +81,7 @@ class LoginForm extends StatelessWidget {
                 width: double.infinity,
                 height: TSizes.buttonHeight,
                 child: ElevatedButton(
-                  onPressed: (){}, 
+                  onPressed: () => Get.to(() => NavigationMenu()), 
                   child: Text(TTexts.loginButton, style: Theme.of(context).textTheme.bodyLarge?.copyWith(color: Colors.white),),
                 ),
               ),
