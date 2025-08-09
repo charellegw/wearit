@@ -12,6 +12,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  carousel_slider: ^5.0.0
 
   #--Utility Packages--#
   http: ^1.1.0
@@ -49,6 +50,8 @@ flutter:
     - assets/icons/category/
     - assets/images/onboarding/
     - assets/images/status/
+    - assets/images/banner/
+    - assets/images/products/
     - assets/logos/
 
   #--Local Fonts--#

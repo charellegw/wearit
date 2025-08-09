@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:wearit/common/styles/spacing_style.dart';
-import 'package:wearit/common/widgets/social_buttons.dart';
-import 'package:wearit/common/widgets/text_divider.dart';
-import 'package:wearit/common/widgets/text_header.dart';
+import 'package:wearit/components/styles/spacing_style.dart';
+import 'package:wearit/components/widgets/buttons/social_buttons.dart';
+import 'package:wearit/components/widgets/dividers/text_divider.dart';
+import 'package:wearit/components/widgets/headers/text_header.dart';
 import 'package:wearit/features/auth/screens/signup/widgets/signup_form.dart';
 import 'package:wearit/utils/constants/text_string.dart';
 

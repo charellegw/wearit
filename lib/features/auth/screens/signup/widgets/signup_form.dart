@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:wearit/common/widgets/status_page.dart';
+import 'package:wearit/components/widgets/pages/status_page.dart';
 import 'package:wearit/features/auth/screens/login/login.dart';
 import 'package:wearit/utils/constants/colors.dart';
 import 'package:wearit/utils/constants/images_string.dart';

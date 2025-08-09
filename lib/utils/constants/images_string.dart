@@ -5,9 +5,9 @@ class TImages {
   static const String appLogo = "assets/logos/logo_blue.png";
 
   // Promotion Banner Slider
-  static const String banner1 = "";
-  static const String banner2 = "";
-  static const String banner3 = "";
+  static const String banner1 = "assets/images/banner/banner_1.png";
+  static const String banner2 = "assets/images/banner/banner_2.png";
+  static const String banner3 = "assets/images/banner/banner_3.png";
 
   // Onboarding
   static const String onboarding1 = "assets/images/onboarding/online_shopping_1.png";
@@ -23,12 +23,14 @@ class TImages {
   static const String iFacebook = "assets/icons/auth/facebook.png";
 
   // Icons: Category
-  static const String iClothes = "";
-  static const String iPants = "";
-  static const String iDress = "";
-  static const String iBags = "";
-  static const String iShoes = "";
-  static const String iAccs = "";
+  static const String iShirt = "assets/icons/category/shirt.png";
+  static const String iPants = "assets/icons/category/pants.png";
+  static const String iDress = "assets/icons/category/dress.png";
+  static const String iSuit = "assets/icons/category/suit.png";
+  static const String iOuter = "assets/icons/category/coat.png";
+  static const String iBags = "assets/icons/category/handbag.png";
+  static const String iShoes = "assets/icons/category/shoe.png";
+  static const String iAccs = "assets/icons/category/accessories.png";
 
   // Icons: Navigation
   static const String iAccount = "assets/icons/auth/user.svg";
@@ -46,4 +48,6 @@ class TImages {
   static const String iZara = "";
 
   // Image: Products
+  static const String product1 = "assets/images/products/product_1.png";
+
 }

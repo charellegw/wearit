@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:wearit/common/widgets/custom_container/blur_filter.dart';
-import 'package:wearit/common/widgets/custom_container/circular_container.dart';
-import 'package:wearit/common/widgets/custom_container/curved_clip_path.dart';
+import 'package:wearit/components/widgets/containers/blur_filter.dart';
+import 'package:wearit/components/widgets/containers/circular_container.dart';
+import 'package:wearit/components/widgets/containers/curved_clip_path.dart';
 import 'package:wearit/utils/constants/colors.dart';
 
 class TAppHeader extends StatelessWidget {
@@ -15,7 +15,7 @@ class TAppHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return TCurvedClipPath(
       child: Container(
-        color: TColors.primaryColor.withAlpha(100),
+        color: TColors.primaryColor,
         padding: const EdgeInsets.all(0),
         child: SizedBox(
           height: 300,

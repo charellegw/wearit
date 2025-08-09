@@ -18,7 +18,7 @@ class TColors {
 
   // Container Background
   static const Color containerLight = Colors.white;
-  static const Color containerDark = Colors.black;
+  static const Color containerDark = Color(0XFF272727);
   static const Color containerLightGrey = Color(0XFFECECEC);
 
   // Button Background
@@ -31,6 +31,10 @@ class TColors {
   static const Color borderPrimary = primaryColor;
   // static const Color borderSecondary = Color(0XFFECECEC);
   static const Color borderSecondary = Color(0XFFA1AAB2);
+
+  // Icon
+  static const Color iconPrimary = primaryColor;
+  static const Color iconSecondary = Color(0XFFA1AAB2);
 
   // Divider
   static const Color divider = Color(0XFFA1AAB2);

@@ -43,9 +43,9 @@ class TStatusPage extends StatelessWidget {
         child: Padding(
           padding: EdgeInsets.only(
             top: TSizes.defaultGap,
-            left: TSizes.screenHorizontal,
-            right: TSizes.screenHorizontal,
-            bottom: TSizes.screenHorizontal,
+            left: TSizes.horizontalPadding,
+            right: TSizes.horizontalPadding,
+            bottom: TSizes.horizontalPadding,
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,

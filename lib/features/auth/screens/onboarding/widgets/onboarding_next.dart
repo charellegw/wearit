@@ -14,7 +14,7 @@ class OnboardingNext extends StatelessWidget {
   Widget build(BuildContext context) {
     return Positioned(
       bottom: TDeviceUtils.getBottomNavigationHeight(),
-      right: TSizes.screenHorizontal,
+      right: TSizes.horizontalPadding,
       child: SizedBox(
         width: TSizes.buttonWidth,
         height: TSizes.buttonHeight,

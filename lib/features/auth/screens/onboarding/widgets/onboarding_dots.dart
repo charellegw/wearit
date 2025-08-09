@@ -16,7 +16,7 @@ class OnboardingDots extends StatelessWidget {
 
     return Positioned(
       bottom: TDeviceUtils.getBottomNavigationHeight() + TSizes.md,
-      left: TSizes.screenHorizontal,
+      left: TSizes.horizontalPadding,
       child: SmoothPageIndicator(
         controller: controller.pageController, 
         count: 3,

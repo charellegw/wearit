@@ -5,7 +5,7 @@ class TTextTheme {
 
   static TextTheme lightTextTheme = TextTheme(
     headlineLarge: const TextStyle().copyWith(fontSize: 18, fontWeight: FontWeight.w700, color: Colors.black), //H3
-    headlineMedium: const TextStyle().copyWith(fontSize: 16, fontWeight: FontWeight.w700, color: Colors.black), //H5
+    headlineMedium: const TextStyle().copyWith(fontSize: 14, fontWeight: FontWeight.w700, color: Colors.black), //H5 = 16
     headlineSmall: const TextStyle().copyWith(fontSize: 12, fontWeight: FontWeight.w600, color: Colors.black), //H6
     bodyLarge: const TextStyle().copyWith(fontSize: 16, fontWeight: FontWeight.w600, color: Colors.black), //body 16
     bodyMedium: const TextStyle().copyWith(fontSize: 14, fontWeight: FontWeight.w500, color: Colors.black), //body 14

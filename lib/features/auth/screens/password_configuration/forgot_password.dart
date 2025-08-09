@@ -2,8 +2,8 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:wearit/common/widgets/status_page.dart';
-import 'package:wearit/common/widgets/text_header.dart';
+import 'package:wearit/components/widgets/pages/status_page.dart';
+import 'package:wearit/components/widgets/headers/text_header.dart';
 import 'package:wearit/features/auth/screens/login/login.dart';
 import 'package:wearit/utils/constants/images_string.dart';
 import 'package:wearit/utils/constants/sizes.dart';
@@ -19,9 +19,9 @@ class ForgotPasswordScreen extends StatelessWidget {
       body: Padding(
         padding: EdgeInsets.only(
             top: TSizes.defaultGap,
-            left: TSizes.screenHorizontal,
-            right: TSizes.screenHorizontal,
-            bottom: TSizes.screenHorizontal,
+            left: TSizes.horizontalPadding,
+            right: TSizes.horizontalPadding,
+            bottom: TSizes.horizontalPadding,
           ),
           child: Column(
             children: [

@@ -10,8 +10,8 @@ class TSizes {
   static const double xl = 20.0;
 
   // Padding: Screen
-  static const double screenHorizontal = 30.0;
-  static const double screenVertical = 50.0;
+  static const double horizontalPadding = 20.0;
+  static const double verticalPadding = 50.0;
   static const double appBarHeight = 56.0;
 
   // Gap: Space between element
@@ -25,11 +25,6 @@ class TSizes {
   static const double logoMd = 150.0;
   static const double logoLg = 250.0;
 
-  // Icons
-  static const double iconXs = 15.0;
-  static const double iconSm = 20.0;
-  static const double iconMd = 30.0;
-
   // Navbar
   static const double navbarHeight = 85.0;
   static const double navbarIcons = 26.0;
@@ -39,7 +34,16 @@ class TSizes {
   static const double buttonWidth = 100.0;
   static const double buttonElevation = 4.0;
   static const double buttonGap = 15.0;
+
+  // Icons: Icon image
+  static const double iconXs = 15.0;
+  static const double iconSm = 20.0;
+  static const double iconMd = 30.0;
+  static const double iconPadding = 13.0;
+
+  // Icons: Icon Button
   static const double iconButtonSize = 38.0;
+  static const double iconButtonPadding = 8.0;
 
   // Button: Radius
   static const double buttonRadius = 10.0;

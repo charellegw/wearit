@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wearit/common/widgets/custom_container/curved_edges.dart';
+import 'package:wearit/components/widgets/containers/curved_edges.dart';
 
 class TCurvedClipPath extends StatelessWidget {
   const TCurvedClipPath({

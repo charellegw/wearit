@@ -15,8 +15,8 @@ class OnboardingPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(
-        vertical: TSizes.screenVertical, 
-        horizontal: TSizes.screenHorizontal
+        vertical: TSizes.verticalPadding, 
+        horizontal: TSizes.horizontalPadding
       ),
       child: Center(
         child: Column(
