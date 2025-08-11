@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 class TBlurFilter extends StatelessWidget {
   const TBlurFilter({
     super.key,
-    this.sigmaX = 80,
-    this.sigmaY = 80,
+    this.sigmaX = 100,
+    this.sigmaY = 100,
     this.width = 300,
     this.height = 300,
     this.radius = 400,

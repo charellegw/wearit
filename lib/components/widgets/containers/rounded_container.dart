@@ -11,7 +11,7 @@ class TRoundedContainer extends StatelessWidget {
       this.radius = TSizes.cardRadius,
       this.backgroundColor,
       this.borderVisibility = false,
-      this.borderColor = TColors.borderSecondary,
+      this.borderColor,
       this.child,
       this.padding,
       this.margin
@@ -21,7 +21,7 @@ class TRoundedContainer extends StatelessWidget {
   final double radius;
   final Color? backgroundColor;
   final bool borderVisibility;
-  final Color borderColor;
+  final Color? borderColor;
   final Widget? child;
   final EdgeInsetsGeometry? padding;
   final EdgeInsetsGeometry? margin;
@@ -37,7 +37,7 @@ class TRoundedContainer extends StatelessWidget {
       decoration: BoxDecoration(
         color: backgroundColor ?? (darkMode ? TColors.containerDark : TColors.containerLight),
         borderRadius: BorderRadius.circular(radius),
-        border: borderVisibility ? Border.all(color: borderColor, width: 1) : null,
+        border: borderVisibility ? Border.all(color: borderColor ?? (darkMode ? Colors.white : TColors.borderSecondary), width: 1) : null,
       ),
       child: child,
     );

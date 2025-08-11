@@ -31,19 +31,17 @@ class TIconButton extends StatelessWidget {
       width: width,
       height: height,
       padding: padding,
-      decoration: BoxDecoration(borderRadius: BorderRadius.circular(radius)),
-      child: ElevatedButton(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(radius),
+        color: backgroundColor ?? (darkMode ? TColors.backgroundDark : TColors.buttonSecondary),
+      ),
+      child: IconButton(
         onPressed: onPressed,
-        style: ElevatedButton.styleFrom(
-          backgroundColor: backgroundColor ??
-              (darkMode ? TColors.backgroundDark : TColors.buttonSecondary),
-          side: BorderSide.none,
-        ),
-        child: Icon(
+        icon:  Icon(
           icon,
           size: iconSize,
           color: iconColor ?? (darkMode ? Colors.white : Colors.black),
-        ),
+        ) ,
       ),
     );
   }

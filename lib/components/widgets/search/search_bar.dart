@@ -11,26 +11,33 @@ class TSearchBar extends StatelessWidget {
     this.icon = Iconsax.search_normal,
     this.backgroundVisible = true,
     this.borderVisible = false,
-    this.text = "Search in store",
+    this.text = "Search in store", 
+    this.padding = TSizes.horizontalPadding,
   });
 
   final IconData icon;
   final bool backgroundVisible, borderVisible;
   final String text;
+  final double padding;
 
   @override
   Widget build(BuildContext context) {
     final darkMode = THelper.isDarkMode(context);
 
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: TSizes.horizontalPadding),
+      padding: EdgeInsets.symmetric(horizontal: padding),
       child: Container(
         width: TDeviceUtils.getScreenWidth(context),
         padding: const EdgeInsets.all(TSizes.md),
         decoration: BoxDecoration(
-          color: !backgroundVisible ? Colors.transparent : darkMode? Colors.black : Colors.white,
+          color: !backgroundVisible
+              ? Colors.transparent
+              : darkMode
+                  ? Colors.black
+                  : Colors.white,
           borderRadius: BorderRadius.circular(TSizes.textFieldRadius),
-          border: borderVisible ? Border.all(color: TColors.borderSecondary) : null,
+          border:
+              borderVisible ? Border.all(color: TColors.borderSecondary) : null,
         ),
         child: Row(
           children: [
@@ -44,7 +51,8 @@ class TSearchBar extends StatelessWidget {
             ),
             Text(
               text,
-              style: Theme.of(context).textTheme.bodySmall,
+              style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                  color: darkMode ? Colors.white : TColors.textSecondary),
             )
           ],
         ),

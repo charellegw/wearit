@@ -23,13 +23,13 @@ class THomeCategories extends StatelessWidget {
             titleColor: darkMode ? Colors.black : Colors.white,
           ),
           const SizedBox(
-            height: TSizes.sectionGap,
+            height: TSizes.defaultGap,
           ),
           SizedBox(
             height: 80,
             child: ListView.builder(
               shrinkWrap: true,
-              itemCount: 6,
+              itemCount: 8,
               scrollDirection: Axis.horizontal,
               itemBuilder: (_, index) {
                 return TCategoryItem(

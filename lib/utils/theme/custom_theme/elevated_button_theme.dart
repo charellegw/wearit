@@ -9,12 +9,13 @@ class TElevatedButtonTheme {
     style: ElevatedButton.styleFrom(
       elevation: 0,
       foregroundColor: Colors.white,
-      backgroundColor: TColors.primaryColor,
+      backgroundColor: TColors.buttonPrimary,
       disabledForegroundColor: Colors.grey,
       disabledBackgroundColor: Colors.grey,
       side: BorderSide.none,
-      padding: const EdgeInsets.symmetric(vertical: 15),
-      textStyle: const TextStyle(fontSize: 16, color: Colors.white, fontWeight: FontWeight.w500),
+      padding: const EdgeInsets.symmetric(vertical: 10),
+      minimumSize: const Size(00, 50),
+      textStyle: const TextStyle(fontSize: 14, color: Colors.white, fontWeight: FontWeight.w500),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(TSizes.buttonRadius)),
     )
   );
@@ -26,10 +27,11 @@ class TElevatedButtonTheme {
       backgroundColor: Colors.blue,
       disabledForegroundColor: Colors.grey,
       disabledBackgroundColor: Colors.grey,
-      side: const BorderSide(color: Colors.blue),
-      padding: const EdgeInsets.symmetric(vertical: 15),
-      textStyle: const TextStyle(fontSize: 16, color: Colors.white, fontWeight: FontWeight.w600),
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+      side: const BorderSide(color: TColors.buttonPrimary),
+      padding: const EdgeInsets.symmetric(vertical: 10),
+      minimumSize: const Size(00, 50),
+      textStyle: const TextStyle(fontSize: 14, color: Colors.white, fontWeight: FontWeight.w500),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(TSizes.buttonRadius)),
     )
   );
 }

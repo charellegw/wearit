@@ -42,7 +42,7 @@ class TSizes {
   static const double iconPadding = 13.0;
 
   // Icons: Icon Button
-  static const double iconButtonSize = 38.0;
+  static const double iconButtonSize = 42.0;
   static const double iconButtonPadding = 8.0;
 
   // Button: Radius
@@ -73,7 +73,7 @@ class TSizes {
   // Card
   static const double cardHeight = 250.0;
   static const double cardWidth = 160.0;
-  static const double cardRadius = radiusSm;
+  static const double cardRadius = 8;
   static const double cardElevation = 2.0;
   static const double cardContentGap = 5.0;
 

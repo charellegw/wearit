@@ -93,7 +93,7 @@ class LoginForm extends StatelessWidget {
                   onPressed: () => Get.to(() => const SignupScreen()), 
                   style: ElevatedButton.styleFrom(
                     foregroundColor: isDark ? TColors.textWhite : TColors.textPrimary,
-                    backgroundColor: isDark ? TColors.buttonSecondaryDark : TColors.buttonSecondary,
+                    backgroundColor: isDark ? TColors.backgroundDark : TColors.buttonSecondary,
                   ),
                   child: Text(TTexts.createAccountButton, style: Theme.of(context).textTheme.bodyLarge,),
                 ),

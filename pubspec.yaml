@@ -48,11 +48,12 @@ flutter:
   assets:
     - assets/icons/auth/
     - assets/icons/category/
+    - assets/icons/brands/
     - assets/images/onboarding/
     - assets/images/status/
     - assets/images/banner/
     - assets/images/products/
-    - assets/logos/
+    - assets/logos/logo_blue.png
 
   #--Local Fonts--#
   fonts:

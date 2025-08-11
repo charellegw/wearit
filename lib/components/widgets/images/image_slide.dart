@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wearit/utils/constants/colors.dart';
 import 'package:wearit/utils/constants/sizes.dart';
 
 class TImageSlide extends StatelessWidget {
@@ -10,11 +11,11 @@ class TImageSlide extends StatelessWidget {
     this.applyImageRadius = true,
     this.borderRadius = TSizes.lg,
     this.border,
-    this.backgroundColor = Colors.transparent,
+    this.backgroundColor = TColors.containerLightGrey,
     this.fit = BoxFit.contain,
     this.padding,
     this.isNetworkImage = false,
-    this.onTap, 
+    this.onTap,
     this.margin,
   });
 
@@ -46,8 +47,8 @@ class TImageSlide extends StatelessWidget {
         ),
         child: ClipRRect(
           borderRadius: applyImageRadius
-            ? BorderRadius.circular(borderRadius)
-            : BorderRadius.zero,
+              ? BorderRadius.circular(borderRadius)
+              : BorderRadius.zero,
           child: Image(
             image: isNetworkImage
                 ? NetworkImage(imagePath)

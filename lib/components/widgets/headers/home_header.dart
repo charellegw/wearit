@@ -18,11 +18,11 @@ class TAppHeader extends StatelessWidget {
         color: TColors.primaryColor,
         padding: const EdgeInsets.all(0),
         child: SizedBox(
-          height: 300,
+          height: 320,
           width: double.infinity,
           child: Stack(
             children: [
-              TCircularContainer(),
+              TCircularContainer(colorAlpha: 80,),
               TBlurFilter(),
               // Positioned(top: -80, right: -120, child: TCircularContainer(colorAlpha: 20,),),
               // Positioned(top: -80, right: -100, child: TCircularContainer(width: 250, height: 250, colorAlpha: 20,),),

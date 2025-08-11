@@ -7,17 +7,17 @@ class TCurvedEdges extends CustomClipper<Path> {
     path.lineTo(0, size.height);
 
     // Left Curve
-    final leftStartPoint = Offset(0, size.height - 30);
-    final leftEndPoint = Offset(50, size.height - 30);
+    final leftStartPoint = Offset(0, size.height - 20);
+    final leftEndPoint = Offset(30, size.height - 20);
     path.quadraticBezierTo(leftStartPoint.dx, leftStartPoint.dy, leftEndPoint.dx, leftEndPoint.dy);
 
     // Center Straight Line
-    final lineStartPoint = Offset(0, size.height - 30);
-    final lineEndPoint = Offset(size.width - 50, size.height - 30);
+    final lineStartPoint = Offset(0, size.height - 20);
+    final lineEndPoint = Offset(size.width - 30, size.height - 20);
     path.quadraticBezierTo(lineStartPoint.dx, lineStartPoint.dy, lineEndPoint.dx, lineEndPoint.dy);
 
     // Right Curve
-    final rightStartPoint = Offset(size.width, size.height - 30);
+    final rightStartPoint = Offset(size.width, size.height - 20);
     final rightEndPoint = Offset(size.width, size.height);
     path.quadraticBezierTo(rightStartPoint.dx, rightStartPoint.dy, rightEndPoint.dx, rightEndPoint.dy);
 

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 // import 'package:wearit/features/auth/screens/login/login.dart';
-// import 'package:wearit/features/auth/screens/onboarding/onboarding.dart';
-import 'package:wearit/navigation_menu.dart';
+import 'package:wearit/features/auth/screens/onboarding/onboarding.dart';
+// import 'package:wearit/navigation_menu.dart';
 import 'package:wearit/utils/theme/theme.dart';
 
 class App extends StatelessWidget {
@@ -14,8 +14,8 @@ class App extends StatelessWidget {
       themeMode: ThemeMode.system,
       theme: TAppTheme.lightTheme,
       darkTheme: TAppTheme.darkTheme,
-      // home: const OnboardingScreen(),
-      home: const NavigationMenu(),
+      home: const OnboardingScreen(),
+      // home: const NavigationMenu(),
       // home: const LoginScreen(),
     );
   }

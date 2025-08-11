@@ -44,7 +44,7 @@ class TImages {
 
   // Icons: Brands
   static const String iNike = "";
-  static const String iNewBalance = "";
+  static const String iNewBalance = "assets/icons/brands/new_balance.png";
   static const String iZara = "";
 
   // Image: Products

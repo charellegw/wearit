@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:wearit/utils/constants/colors.dart';
 
 class TCircularContainer extends StatelessWidget {
   const TCircularContainer({
@@ -7,7 +6,7 @@ class TCircularContainer extends StatelessWidget {
     this.width = 200,
     this.height = 200,
     this.radius = 400,
-    this.color = TColors.cautionYellow,
+    this.color = Colors.white,
     this.colorAlpha = 255,
     this.child,
     this.margin,

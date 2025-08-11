@@ -36,7 +36,7 @@ class THomeAppBar extends StatelessWidget {
       actions: [
         TIconButtonWithBadge(
           icon: Iconsax.notification,
-          badgeText: '99+',
+          badgeText: '99',
         ),
       ],
     );

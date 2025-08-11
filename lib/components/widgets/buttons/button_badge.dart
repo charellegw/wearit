@@ -26,7 +26,7 @@ class TButtonBadge extends StatelessWidget {
         ),
         child: Text(
           badgeText,
-          style: Theme.of(context).textTheme.labelMedium!.copyWith(color: TColors.textWhite, fontWeight: FontWeight.w600).apply(fontSizeFactor: 0.9),
+          style: Theme.of(context).textTheme.labelMedium!.copyWith(color: TColors.textWhite, fontWeight: FontWeight.w600),
           textAlign: TextAlign.center,
         ),
       ),
