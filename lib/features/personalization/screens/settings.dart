@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:wearit/components/styles/spacing_style.dart';
 import 'package:wearit/components/widgets/app_bar/app_bar.dart';
 import 'package:wearit/components/widgets/headers/app_header.dart';
 import 'package:wearit/components/widgets/headers/section_header.dart';
-import 'package:wearit/components/widgets/images/circular_image.dart';
 import 'package:wearit/components/widgets/list_tiles/settings_menu_tile.dart';
 import 'package:wearit/components/widgets/list_tiles/user_profile_tile.dart';
+import 'package:wearit/features/auth/screens/login/login.dart';
 import 'package:wearit/utils/constants/colors.dart';
-import 'package:wearit/utils/constants/images_string.dart';
 import 'package:wearit/utils/constants/sizes.dart';
 import 'package:wearit/utils/helpers/helper.dart';
 
@@ -67,8 +67,28 @@ class SettingsScreen extends StatelessWidget {
                   TSettingsMenuTile(icon: Iconsax.location, title: 'Location Permission', subtitle: 'Allow to access your location', trailing: Switch(value: true, onChanged: (value) {}),),
                   TSettingsMenuTile(icon: Iconsax.security_user, title: 'Safe Mode', subtitle: 'Search result is safe for all ages', trailing: Switch(value: false, onChanged: (value) {}),),
                   TSettingsMenuTile(icon: Iconsax.image, title: 'Data Saver', subtitle: 'Reduce your data consumption when using cellular data. Images may be at lower resolution.', trailing: Switch(value: false, onChanged: (value) {}),),
-                  const SizedBox( height: TSizes.sectionGap, ),
                   
+                  const SizedBox( height: TSizes.sectionGap, ),
+                  SizedBox(
+                    width: double.infinity,
+                    height: TSizes.buttonHeight,
+                    child: ElevatedButton(
+                      onPressed: () => Get.to(() => const LoginScreen()),
+                      style: ElevatedButton.styleFrom(
+                        foregroundColor: darkMode 
+                          ? TColors.textWhite 
+                          : TColors.textPrimary,
+                        backgroundColor: darkMode
+                          ? TColors.backgroundDark
+                          : TColors.buttonSecondary,
+                      ),
+                      child: Text(
+                        'Logout',
+                        style: Theme.of(context).textTheme.bodyLarge,
+                      ),
+                    ),
+                  ),
+                  const SizedBox( height: TSizes.sectionGap, ),
                 ],
               ),
             ),
