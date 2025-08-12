@@ -26,13 +26,7 @@ class ShopScreen extends StatelessWidget {
       length: 8,
       child: Scaffold(
         appBar: TAppBar(
-          title: Text(
-            'Shop',
-            style: Theme.of(context)
-                .textTheme
-                .headlineLarge!
-                .copyWith(fontWeight: FontWeight.w600),
-          ),
+          title: Text( 'Shop', style: Theme.of(context) .textTheme .headlineLarge! .copyWith(fontWeight: FontWeight.w600), ),
           actions: [
             TIconButtonWithBadge(icon: Iconsax.shopping_cart, badgeText: '5'),
           ],
@@ -69,7 +63,7 @@ class ShopScreen extends StatelessWidget {
                           child: TRoundedContainer(
                             padding: const EdgeInsets.all(TSizes.sm),
                             borderVisibility: true,
-                            borderColor: TColors.borderSecondary.withAlpha(120),
+                            borderColor: darkMode ? TColors.borderSecondary.withAlpha(120) : TColors.containerLight,
                             backgroundColor: darkMode ? TColors.containerDark : TColors.containerLight,
                             child: Row(
                               mainAxisSize: MainAxisSize.min,
@@ -107,16 +101,16 @@ class ShopScreen extends StatelessWidget {
                   Tab(child: Text('Outers', style: TextStyle(fontSize: 12)),),
                   Tab(child: Text('Pants', style: TextStyle(fontSize: 12)),),
                   Tab(child: Text('Dress', style: TextStyle(fontSize: 12)),),
-                  Tab(child: Text('Shoes', style: TextStyle(fontSize: 12)),),
                   Tab(child: Text('Bags', style: TextStyle(fontSize: 12)),),
+                  Tab(child: Text('Shoes', style: TextStyle(fontSize: 12)),),
                   Tab(child: Text('Accessories', style: TextStyle(fontSize: 12)),),
                 ],),
               )
             ];
           },
           body: TabBarView(
-            children: [
-              ListView(
+            children: List.generate(8, (index) {
+              return ListView(
                 physics: NeverScrollableScrollPhysics(),
                 children: [
                   Padding(
@@ -131,14 +125,14 @@ class ShopScreen extends StatelessWidget {
                         const SizedBox(height: TSizes.defaultGap,),
 
                         TGridLayout(itemCount: 4, itemBuilder: (_, index) => TProductVerticalCard(), ),
-                        const SizedBox(height: TSizes.sectionGap,),
+                        const SizedBox(height: TSizes.defaultGap,),
                   
                       ],
                     ),
                   ),
                 ],
-              )
-            ],
+              );
+            }),
           ),
         ),
       ),

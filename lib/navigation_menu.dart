@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:wearit/features/shop/screens/home/home.dart';
 import 'package:wearit/features/shop/screens/shop/shop.dart';
+import 'package:wearit/features/shop/screens/wishlist/wishlist.dart';
 import 'package:wearit/utils/constants/colors.dart';
 import 'package:wearit/utils/constants/sizes.dart';
 
@@ -38,7 +39,7 @@ class NavigationController extends GetxController {
   final screens = [
     const HomeScreen(),
     const ShopScreen(),
-    Container( color: Colors.yellowAccent, ),
+    const WishlistScreen(),
     Container( color: Colors.deepPurpleAccent, ),
     Container( color: Colors.green, ),
   ];

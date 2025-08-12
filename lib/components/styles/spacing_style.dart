@@ -13,6 +13,6 @@ class TSpacingStyle {
     top: TSizes.defaultGap,
     left: TSizes.horizontalPadding,
     right: TSizes.horizontalPadding,
-    bottom: TSizes.verticalPadding,
+    bottom: TSizes.defaultGap,
   );
 }

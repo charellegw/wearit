@@ -4,11 +4,21 @@ import 'package:wearit/components/widgets/buttons/icon_button.dart';
 
 class TIconButtonWithBadge extends StatelessWidget {
   const TIconButtonWithBadge({
-    super.key, required this.icon, required this.badgeText,
+    super.key, 
+    required this.icon, 
+    this.badgeText, 
+    this.backgroundColor, 
+    this.iconColor, 
+    this.padding, 
+    this.onPressed,
   });
 
   final IconData icon;
-  final String badgeText;
+  final Color? backgroundColor, iconColor;
+  final EdgeInsetsGeometry? padding;
+  final void Function()? onPressed;
+
+  final String? badgeText;
 
   @override
   Widget build(BuildContext context) {
@@ -17,10 +27,15 @@ class TIconButtonWithBadge extends StatelessWidget {
       children: [
         TIconButton(
           icon: icon,
+          onPressed: onPressed,
+          padding: padding,
+          backgroundColor: backgroundColor,
+          iconColor: iconColor,
         ),
-        TButtonBadge(
-          badgeText: badgeText,
-        ),
+        if (badgeText != null)
+          TButtonBadge(
+            badgeText: badgeText!,
+          ),
       ],
     );
   }
