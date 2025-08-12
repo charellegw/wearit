@@ -12,7 +12,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       themeMode: ThemeMode.system,
-      theme: TAppTheme.lightTheme,
+      theme: TAppTheme.darkTheme,
       darkTheme: TAppTheme.darkTheme,
       home: const OnboardingScreen(),
       // home: const NavigationMenu(),

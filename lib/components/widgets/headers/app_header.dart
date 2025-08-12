@@ -16,19 +16,14 @@ class TAppHeader extends StatelessWidget {
     return TCurvedClipPath(
       child: Container(
         color: TColors.primaryColor,
-        padding: const EdgeInsets.all(0),
-        child: SizedBox(
-          height: 320,
-          width: double.infinity,
-          child: Stack(
-            children: [
-              TCircularContainer(colorAlpha: 80,),
-              TBlurFilter(),
-              // Positioned(top: -80, right: -120, child: TCircularContainer(colorAlpha: 20,),),
-              // Positioned(top: -80, right: -100, child: TCircularContainer(width: 250, height: 250, colorAlpha: 20,),),
-              child, 
-            ],
-          ),
+        child: Stack(
+          children: [
+            Positioned(top: -20, right: -20, child: TCircularContainer(colorAlpha: 120,)),
+            Positioned(top: -20, right: -20, child: TBlurFilter()),
+            // Positioned(top: -80, right: -120, child: TCircularContainer(colorAlpha: 20,),),
+            // Positioned(top: -80, right: -100, child: TCircularContainer(width: 250, height: 250, colorAlpha: 20,),),
+            child, 
+          ],
         ),
       ),
     );

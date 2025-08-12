@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 class TCircularContainer extends StatelessWidget {
   const TCircularContainer({
     super.key,
-    this.width = 200,
-    this.height = 200,
+    this.width = 250,
+    this.height = 250,
     this.radius = 400,
     this.color = Colors.white,
     this.colorAlpha = 255,
