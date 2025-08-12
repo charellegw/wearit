@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:wearit/components/widgets/headers/home_header.dart';
 import 'package:wearit/components/widgets/headers/section_header.dart';
 import 'package:wearit/components/widgets/layouts/grid_layout.dart';
+import 'package:wearit/components/widgets/products/product_cards/product_vertical_card.dart';
 import 'package:wearit/components/widgets/search/search_bar.dart';
 import 'package:wearit/features/shop/screens/home/widgets/home_appbar.dart';
 import 'package:wearit/features/shop/screens/home/widgets/home_categories.dart';
@@ -41,7 +42,7 @@ class HomeScreen extends StatelessWidget {
                   const SizedBox( height: TSizes.sectionGap, ),
                   TSectionHeader(title: 'Popular Now'),
                   const SizedBox( height: TSizes.defaultGap, ),
-                  TGridLayout(),
+                  TGridLayout(itemCount: 9, itemBuilder: (_, index) => TProductVerticalCard(),),
                 ],
               ),
             ),

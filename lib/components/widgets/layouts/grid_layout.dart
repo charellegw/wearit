@@ -1,16 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:wearit/components/widgets/products/product_cards/product_vertical_card.dart';
 import 'package:wearit/utils/constants/sizes.dart';
 
 class TGridLayout extends StatelessWidget {
   const TGridLayout({
     super.key,
+    required this.itemCount,
+    required this.itemBuilder, 
+    this.mainAxisExtent = 311,
   });
+
+  final int itemCount;
+  final NullableIndexedWidgetBuilder itemBuilder;
+  final double mainAxisExtent;
 
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
-      itemCount: 9,
+      itemCount: itemCount,
       shrinkWrap: true,
       padding: EdgeInsets.zero,
       physics: const NeverScrollableScrollPhysics(),
@@ -18,8 +24,9 @@ class TGridLayout extends StatelessWidget {
         crossAxisCount: 2,
         mainAxisSpacing: TSizes.gridGap,
         crossAxisSpacing: TSizes.gridGap,
-        mainAxisExtent: 311,
-      ), 
-      itemBuilder: (_, index) => TProductVerticalCard());
+        mainAxisExtent: mainAxisExtent,
+      ),
+      itemBuilder: itemBuilder,
+    );
   }
 }

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:wearit/utils/constants/colors.dart';
-import 'package:wearit/utils/constants/images_string.dart';
 import 'package:wearit/utils/constants/sizes.dart';
 import 'package:wearit/utils/helpers/helper.dart';
 
@@ -8,8 +7,8 @@ class TCircularImage extends StatelessWidget {
   const TCircularImage({
     super.key, 
     required this.imagePath, 
-    this.size = 55, 
-    this.padding = TSizes.md, 
+    this.size = 50, 
+    this.padding = TSizes.sm, 
     this.backgroundColor, 
     this.overlayColor, 
     this.fit = BoxFit.contain, 
@@ -20,8 +19,8 @@ class TCircularImage extends StatelessWidget {
   final double size;
   final double padding;
   final Color? backgroundColor, overlayColor;
-  final BoxFit? fit;
-  final bool? isNetworkImage;
+  final BoxFit fit;
+  final bool isNetworkImage;
 
   @override
   Widget build(BuildContext context) {
@@ -33,10 +32,10 @@ class TCircularImage extends StatelessWidget {
       padding: EdgeInsets.all(padding),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(100),
-        color: backgroundColor ?? (darkMode ? TColors.backgroundDark : TColors.backgroundLight),
+        color: backgroundColor ?? (darkMode ? TColors.containerDark : TColors.containerLight),
       ),
       child: Image(
-        image: AssetImage(TImages.iShirt),
+        image: AssetImage(imagePath),
         color: overlayColor ?? (darkMode ? TColors.containerLight : TColors.backgroundDark),
       ),
     );

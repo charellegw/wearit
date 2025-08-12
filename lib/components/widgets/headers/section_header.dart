@@ -7,7 +7,7 @@ class TSectionHeader extends StatelessWidget {
     super.key, 
     this.buttonVisible = false, 
     required this.title, 
-    this.buttonText = "View all", 
+    this.buttonText = "See all", 
     this.titleColor, 
     this.buttonTextColor, 
     this.buttonOnPressed,
@@ -24,6 +24,7 @@ class TSectionHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     final darkMode = THelper.isDarkMode(context);
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
           title,
@@ -33,7 +34,7 @@ class TSectionHeader extends StatelessWidget {
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
         ),
-        if (buttonVisible) TextButton(onPressed: buttonOnPressed!, child: Text(buttonText, style: Theme.of(context).textTheme.labelLarge!.copyWith(color: buttonTextColor ?? (darkMode ? TColors.backgroundLight.withAlpha(50) : TColors.backgroundDark.withAlpha(50))))),
+        if (buttonVisible && buttonOnPressed != null) TextButton(onPressed: buttonOnPressed, child: Text(buttonText, style: Theme.of(context).textTheme.labelLarge!.copyWith(color: buttonTextColor ?? (darkMode ? TColors.backgroundLight.withAlpha(150) : TColors.backgroundDark.withAlpha(150))))),
       ],
     );
   }

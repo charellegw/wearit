@@ -12,7 +12,7 @@ class TBrandItemHeader extends StatelessWidget {
   });
 
   final String productName, brandName;
-  final bool? isVerified;
+  final bool isVerified;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class TBrandItemHeader extends StatelessWidget {
 
         const SizedBox( height: TSizes.textGap, ),
 
-        TBrandName(brandName: brandName),
+        TBrandName(brandName: brandName, isVerified: isVerified,),
       ],
     );
   }

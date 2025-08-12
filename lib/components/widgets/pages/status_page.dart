@@ -113,7 +113,7 @@ class TStatusPage extends StatelessWidget {
                       foregroundColor:
                           isDark ? TColors.textWhite : TColors.textPrimary,
                       backgroundColor: isDark
-                          ? TColors.buttonSecondaryDark
+                          ? TColors.backgroundDark
                           : TColors.buttonSecondary,
                     ),
                     child: Text(
