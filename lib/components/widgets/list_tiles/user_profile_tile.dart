@@ -7,10 +7,10 @@ import 'package:wearit/utils/helpers/helper.dart';
 
 class TUserProfileTile extends StatelessWidget {
   const TUserProfileTile({
-    super.key, required this.name, required this.email,
+    super.key, required this.trailingOnPressed,
   });
 
-  final String name, email;
+  final VoidCallback trailingOnPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -21,17 +21,17 @@ class TUserProfileTile extends StatelessWidget {
         padding: 0,
       ),
       title: Text(
-        name,
+        'Charelle Winarto',
         style: Theme.of(context).textTheme.headlineSmall!.copyWith(
             color: darkMode ? TColors.textPrimary : TColors.textWhite),
       ),
       subtitle: Text(
-        email,
+        'charellewinarto@gmail.com',
         style: Theme.of(context).textTheme.bodySmall!.copyWith(
             color: darkMode ? TColors.textPrimary : TColors.textWhite),
       ),
       trailing: IconButton(
-          onPressed: () {},
+          onPressed: trailingOnPressed,
           icon: Icon(
             Iconsax.edit,
             color: darkMode ? TColors.textPrimary : TColors.textWhite,

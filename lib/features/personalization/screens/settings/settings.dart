@@ -8,6 +8,7 @@ import 'package:wearit/components/widgets/headers/section_header.dart';
 import 'package:wearit/components/widgets/list_tiles/settings_menu_tile.dart';
 import 'package:wearit/components/widgets/list_tiles/user_profile_tile.dart';
 import 'package:wearit/features/auth/screens/login/login.dart';
+import 'package:wearit/features/personalization/screens/profile/profile.dart';
 import 'package:wearit/utils/constants/colors.dart';
 import 'package:wearit/utils/constants/sizes.dart';
 import 'package:wearit/utils/helpers/helper.dart';
@@ -38,8 +39,8 @@ class SettingsScreen extends StatelessWidget {
                               fontWeight: FontWeight.w600),
                     ),
                   ),
-                  TUserProfileTile(name: 'Charelle Winarto', email: 'charellewinarto@gmail.com',),
-                  const SizedBox( height: TSizes.sectionGap, ),
+                  TUserProfileTile(trailingOnPressed: () => Get.to(() => const ProfileScreen()),),
+                  const SizedBox( height: TSizes.sectionGap, ), 
                 ],
               ),
             ),
