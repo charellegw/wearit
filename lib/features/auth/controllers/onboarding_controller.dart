@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:wearit/features/auth/screens/login/login.dart';
 
 class OnboardingController extends GetxController{
@@ -17,7 +18,9 @@ class OnboardingController extends GetxController{
   
   void nextPage() {
     if(currentPageIndex.value == 2){
-      Get.to(LoginScreen());
+      final storage = GetStorage();
+      storage.write('isFirstOpen', false);
+      Get.offAll(const LoginScreen());
     } else {
       int index = currentPageIndex.value + 1;
       pageController.jumpToPage(index);

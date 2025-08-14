@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:wearit/components/widgets/products/product_cards/text_product_card.dart';
+import 'package:wearit/components/widgets/products/product_element/text_product.dart';
 import 'package:wearit/utils/constants/colors.dart';
 import 'package:wearit/utils/constants/sizes.dart';
 
@@ -24,7 +24,7 @@ class TBrandName extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         Flexible(
-          child: TTextProductCard(
+          child: TTextProduct(
             text: brandName,
             isSmallText: isSmallText,
             textColor: textColor,

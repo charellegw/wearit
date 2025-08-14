@@ -6,7 +6,7 @@ import 'package:wearit/components/widgets/app_bar/app_bar.dart';
 import 'package:wearit/components/widgets/buttons/icon_button_with_badge.dart';
 import 'package:wearit/components/widgets/layouts/grid_layout.dart';
 import 'package:wearit/components/widgets/products/product_cards/product_vertical_card.dart';
-import 'package:wearit/features/shop/screens/home/home.dart';
+import 'package:wearit/features/store/screens/home/home.dart';
 
 class WishlistScreen extends StatelessWidget {
   const WishlistScreen({super.key});

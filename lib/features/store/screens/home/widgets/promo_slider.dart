@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:wearit/components/widgets/buttons/carousel_buttons.dart';
 import 'package:wearit/components/widgets/images/image_slide.dart';
-import 'package:wearit/features/shop/controllers/home/home_controller.dart';
+import 'package:wearit/features/store/controllers/home/home_controller.dart';
 import 'package:wearit/utils/constants/sizes.dart';
 
 class TPromoSlider extends StatelessWidget {

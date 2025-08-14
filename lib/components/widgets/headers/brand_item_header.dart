@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wearit/components/widgets/brands/brand_text.dart';
-import 'package:wearit/components/widgets/products/product_cards/text_product_card.dart';
+import 'package:wearit/components/widgets/products/product_element/text_product.dart';
 import 'package:wearit/utils/constants/sizes.dart';
 
 class TBrandItemHeader extends StatelessWidget {
@@ -19,7 +19,7 @@ class TBrandItemHeader extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        TTextProductCard(
+        TTextProduct(
           text: productName,
           // maxLines: 2,
         ),

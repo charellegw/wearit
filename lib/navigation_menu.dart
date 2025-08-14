@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:wearit/features/personalization/screens/settings/settings.dart';
-import 'package:wearit/features/shop/screens/cart/cart.dart';
-import 'package:wearit/features/shop/screens/home/home.dart';
-import 'package:wearit/features/shop/screens/shop/shop.dart';
-import 'package:wearit/features/shop/screens/wishlist/wishlist.dart';
+import 'package:wearit/features/store/screens/cart/cart.dart';
+import 'package:wearit/features/store/screens/home/home.dart';
+import 'package:wearit/features/store/screens/shop/shop.dart';
+import 'package:wearit/features/store/screens/wishlist/wishlist.dart';
 import 'package:wearit/utils/constants/colors.dart';
 import 'package:wearit/utils/constants/sizes.dart';
 

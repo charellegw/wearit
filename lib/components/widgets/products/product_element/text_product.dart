@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:wearit/utils/constants/colors.dart';
 
-class TTextProductCard extends StatelessWidget {
-  const TTextProductCard({
+class TTextProduct extends StatelessWidget {
+  const TTextProduct({
     super.key,
     required this.text,
     this.isSmallText = false,

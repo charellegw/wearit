@@ -39,7 +39,7 @@ class ShopScreen extends StatelessWidget {
                 pinned: true,
                 floating: true,
                 backgroundColor: darkMode ? TColors.backgroundDark : TColors.backgroundLight,
-                expandedHeight: 300,
+                expandedHeight: 340,
                 flexibleSpace: Padding(
                   padding: EdgeInsetsGeometry.symmetric(horizontal: TSizes.horizontalPadding,),
                   child: ListView(

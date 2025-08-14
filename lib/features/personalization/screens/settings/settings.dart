@@ -40,7 +40,7 @@ class SettingsScreen extends StatelessWidget {
                     ),
                   ),
                   TUserProfileTile(trailingOnPressed: () => Get.to(() => const ProfileScreen()),),
-                  const SizedBox( height: TSizes.sectionGap, ), 
+                  const SizedBox( height: TSizes.bigSectionGap, ), 
                 ],
               ),
             ),

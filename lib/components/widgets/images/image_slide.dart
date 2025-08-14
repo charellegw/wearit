@@ -17,6 +17,7 @@ class TImageSlide extends StatelessWidget {
     this.isNetworkImage = false,
     this.onTap,
     this.margin,
+    this.imagePadding = EdgeInsets.zero,
   });
 
   final double? width, height;
@@ -27,6 +28,7 @@ class TImageSlide extends StatelessWidget {
   final Color backgroundColor;
   final BoxFit? fit;
   final EdgeInsets? padding;
+  final EdgeInsets imagePadding;
   final EdgeInsets? margin;
   final bool isNetworkImage;
   final VoidCallback? onTap;
@@ -49,11 +51,14 @@ class TImageSlide extends StatelessWidget {
           borderRadius: applyImageRadius
               ? BorderRadius.circular(borderRadius)
               : BorderRadius.zero,
-          child: Image(
-            image: isNetworkImage
-                ? NetworkImage(imagePath)
-                : AssetImage(imagePath) as ImageProvider,
-            fit: fit,
+          child: Padding(
+            padding: imagePadding,
+            child: Image(
+              image: isNetworkImage
+                  ? NetworkImage(imagePath)
+                  : AssetImage(imagePath) as ImageProvider,
+              fit: fit,
+            ),
           ),
         ),
       ),

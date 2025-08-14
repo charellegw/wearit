@@ -4,9 +4,9 @@ import 'package:wearit/components/widgets/headers/section_header.dart';
 import 'package:wearit/components/widgets/layouts/grid_layout.dart';
 import 'package:wearit/components/widgets/products/product_cards/product_vertical_card.dart';
 import 'package:wearit/components/widgets/search/search_bar.dart';
-import 'package:wearit/features/shop/screens/home/widgets/home_appbar.dart';
-import 'package:wearit/features/shop/screens/home/widgets/home_categories.dart';
-import 'package:wearit/features/shop/screens/home/widgets/promo_slider.dart';
+import 'package:wearit/features/store/screens/home/widgets/home_appbar.dart';
+import 'package:wearit/features/store/screens/home/widgets/home_categories.dart';
+import 'package:wearit/features/store/screens/home/widgets/promo_slider.dart';
 import 'package:wearit/utils/constants/images_string.dart';
 import 'package:wearit/utils/constants/sizes.dart';
 

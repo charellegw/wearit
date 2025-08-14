@@ -4,8 +4,8 @@ import 'package:wearit/components/widgets/buttons/icon_button.dart';
 import 'package:wearit/components/widgets/containers/rounded_container.dart';
 import 'package:wearit/components/widgets/headers/brand_item_header.dart';
 import 'package:wearit/components/widgets/images/image_slide.dart';
-import 'package:wearit/components/widgets/products/product_cards/label_product_card.dart';
-import 'package:wearit/components/widgets/products/product_cards/text_product_card.dart';
+import 'package:wearit/components/widgets/products/product_element/label_product.dart';
+import 'package:wearit/components/widgets/products/product_element/text_product.dart';
 import 'package:wearit/utils/constants/colors.dart';
 import 'package:wearit/utils/constants/images_string.dart';
 import 'package:wearit/utils/constants/sizes.dart';
@@ -49,7 +49,7 @@ class TProductVerticalCard extends StatelessWidget {
                       Positioned(
                         top: 10,
                         left: 10,
-                        child: TLabelProductCard(
+                        child: TLabelProduct(
                           text: '-20%',
                           backgroundColor: TColors.errorRed,
                           borderColor: TColors.errorRed,
@@ -79,9 +79,9 @@ class TProductVerticalCard extends StatelessWidget {
                       const SizedBox(
                         height: TSizes.textGap,
                       ),
-                      TLabelProductCard(
+                      TLabelProduct(
                         text: '4.8',
-                        icon: Iconsax.star1,
+                        icon: Icons.star,
                         iconColor: TColors.cautionYellow,
                         backgroundColor: TColors.cautionYellow,
                         borderColor: TColors.cautionYellow,
@@ -98,11 +98,11 @@ class TProductVerticalCard extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               if (isDiscount)
-                                TTextProductCard(
+                                TTextProduct(
                                   text: '\$142.8',
                                   isDiscountPrice: true,
                                 ),
-                              TTextProductCard(
+                              TTextProduct(
                                 text: '\$119',
                               ),
                             ],

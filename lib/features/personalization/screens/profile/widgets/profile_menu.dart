@@ -8,7 +8,7 @@ class TProfileMenu extends StatelessWidget {
     super.key,
     required this.title,
     required this.value,
-    this.icon = Iconsax.arrow_right_24,
+    this.icon = Iconsax.arrow_right_34,
     required this.onTap,
   });
 

@@ -3,8 +3,8 @@ import 'package:wearit/components/widgets/containers/rounded_container.dart';
 import 'package:wearit/utils/constants/colors.dart';
 import 'package:wearit/utils/constants/sizes.dart';
 
-class TLabelProductCard extends StatelessWidget {
-  const TLabelProductCard({
+class TLabelProduct extends StatelessWidget {
+  const TLabelProduct({
     super.key,
     required this.text,
     this.icon,
