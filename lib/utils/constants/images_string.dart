@@ -18,6 +18,12 @@ class TImages {
   static const String emailSent = "assets/images/status/email_sent.png";
   static const String createAccountSuccess = "assets/images/status/create_account_success.png";
 
+  // Animation
+  static const String docerAnimation = "assets/images/animations/141594-animation-of-docer.json";
+  static const String mailbox = "assets/images/animations/Mailbox.json";
+  static const String successCheck = "assets/images/animations/success-check-fill-FPiuzFU9Hy.json";
+
+
   // Icons: Auth
   static const String iGoogle = "assets/icons/auth/google.png";
   static const String iFacebook = "assets/icons/auth/facebook.png";

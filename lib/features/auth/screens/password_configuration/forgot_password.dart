@@ -42,7 +42,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                 width: double.infinity,
                 height: TSizes.buttonHeight,
                 child: ElevatedButton(
-                  onPressed: () => Get.to(() => TStatusPage(imagePath: TImages.emailSent, title: TTexts.forgotSuccesTitle, subtitle: TTexts.forgotSuccessSubtitle, primaryButtonText: TTexts.continueButton, onPrimaryPressed: () => Get.offAll(() => LoginScreen()), appBarButtonVisibility: false, secondaryButtonText: TTexts.resendEmailButton, onSecondaryPressed: (){},)), 
+                  onPressed: () => Get.to(() => TStatusPage(imagePath: TImages.emailSent, title: TTexts.passwordResetEmailTitle, subtitle: TTexts.passwordResetEmailSubtitle, primaryButtonText: TTexts.continueButton, onPrimaryPressed: () => Get.offAll(() => LoginScreen()), appBarButtonVisibility: false, secondaryButtonText: TTexts.resendEmailButton, onSecondaryPressed: (){},)), 
                   child: Text(
                     TTexts.submitButton,
                     style: Theme.of(context).textTheme.bodyLarge!.copyWith(color: Colors.white),

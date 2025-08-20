@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:wearit/bindings/general_bindings.dart';
 // import 'package:wearit/features/auth/screens/login/login.dart';
 // import 'package:wearit/features/auth/screens/onboarding/onboarding.dart';
-import 'package:wearit/features/store/screens/product_details/product_details.dart';
+// import 'package:wearit/features/store/screens/product_details/product_details.dart';
 // import 'package:wearit/navigation_menu.dart';
 import 'package:wearit/utils/theme/theme.dart';
 
@@ -13,8 +14,9 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       themeMode: ThemeMode.system,
-      theme: TAppTheme.darkTheme,
+      theme: TAppTheme.lightTheme,
       darkTheme: TAppTheme.darkTheme,
+      initialBinding: GeneralBindings(),
       // home: const OnboardingScreen(),
       // home: const ProductDetailsScreen(),
       // home: const NavigationMenu(),

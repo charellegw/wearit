@@ -8,17 +8,22 @@ import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 
 Future<void> main() async {
+
   final WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
 
+  // Firebase
   await GetStorage.init();
-
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
-
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform).then(
     (FirebaseApp value) => Get.put(AuthenticationRepository())
   );
 
-
+  // Supabase
+  //WidgetsFlutterBinding.ensureInitialized();
+  // await Supabase.initialize(
+  //   url: SUPABASE_URL,
+  //   anonKey: SUPABASE_ANON_KEY,
+  // );
 
   runApp(const App());
 }
