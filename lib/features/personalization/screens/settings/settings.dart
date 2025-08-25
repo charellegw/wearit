@@ -8,7 +8,9 @@ import 'package:wearit/components/widgets/headers/section_header.dart';
 import 'package:wearit/components/widgets/list_tiles/settings_menu_tile.dart';
 import 'package:wearit/components/widgets/list_tiles/user_profile_tile.dart';
 import 'package:wearit/features/auth/screens/login/login.dart';
+import 'package:wearit/features/personalization/screens/address/address.dart';
 import 'package:wearit/features/personalization/screens/profile/profile.dart';
+import 'package:wearit/features/store/screens/cart/cart.dart';
 import 'package:wearit/utils/constants/colors.dart';
 import 'package:wearit/utils/constants/sizes.dart';
 import 'package:wearit/utils/helpers/helper.dart';
@@ -52,8 +54,8 @@ class SettingsScreen extends StatelessWidget {
                   TSectionHeader(title: 'Account Settings'),
                   const SizedBox( height: TSizes.sectionGap, ),
 
-                  TSettingsMenuTile(icon: Iconsax.safe_home, title: 'My Addresses', subtitle: 'Set the delivery address'),
-                  TSettingsMenuTile(icon: Iconsax.shopping_cart, title: 'My Cart', subtitle: 'Add, edit, checkout, remove products'),
+                  TSettingsMenuTile(icon: Iconsax.safe_home, title: 'My Addresses', subtitle: 'Set the delivery address', onTap: () => Get.to(() => const AddressScreen()),),
+                  TSettingsMenuTile(icon: Iconsax.shopping_cart, title: 'My Cart', subtitle: 'Add, edit, checkout, remove products', onTap: () => Get.to(() => const CartScreen()),),
                   TSettingsMenuTile(icon: Iconsax.receipt, title: 'My Orders', subtitle: 'Check order progress and history of order'),
                   TSettingsMenuTile(icon: Iconsax.wallet, title: 'Payment Methods', subtitle: 'Set payment methods'),
                   TSettingsMenuTile(icon: Iconsax.discount_shape, title: 'Voucher Coupons', subtitle: 'List of all the voucher coupons'),
