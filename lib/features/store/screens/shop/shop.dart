@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:wearit/components/widgets/app_bar/app_bar.dart';
 import 'package:wearit/components/widgets/app_bar/tab_bar.dart';
@@ -10,6 +11,7 @@ import 'package:wearit/components/widgets/images/circular_image.dart';
 import 'package:wearit/components/widgets/layouts/grid_layout.dart';
 import 'package:wearit/components/widgets/products/product_cards/product_vertical_card.dart';
 import 'package:wearit/components/widgets/search/search_bar.dart';
+import 'package:wearit/features/store/screens/cart/cart.dart';
 import 'package:wearit/utils/constants/colors.dart';
 import 'package:wearit/utils/constants/images_string.dart';
 import 'package:wearit/utils/constants/sizes.dart';
@@ -28,7 +30,7 @@ class ShopScreen extends StatelessWidget {
         appBar: TAppBar(
           title: Text( 'Shop', style: Theme.of(context) .textTheme .headlineLarge! .copyWith(fontWeight: FontWeight.w600), ),
           actions: [
-            TIconButtonWithBadge(icon: Iconsax.shopping_cart, badgeText: '5'),
+            TIconButtonWithBadge(icon: Iconsax.shopping_cart, badgeText: '5', onPressed: () => Get.to(() => const CartScreen()),),
           ],
         ),
         body: NestedScrollView(

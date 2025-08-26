@@ -5,7 +5,7 @@ class TImages {
   static const String appLogo = "assets/logos/logo_blue.png";
 
   // Promotion Banner Slider
-  static const String banner1 = "assets/images/banner/banner_1.png";
+  static const String banner1 = "assets/images/banner/new_arrival.png";
   static const String banner2 = "assets/images/banner/banner_2.png";
   static const String banner3 = "assets/images/banner/banner_3.png";
 
