@@ -2,7 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:wearit/components/widgets/buttons/carousel_buttons.dart';
-import 'package:wearit/components/widgets/images/image_slide.dart';
+import 'package:wearit/components/widgets/images/image_thumbnail.dart';
 import 'package:wearit/features/store/controllers/home/home_controller.dart';
 import 'package:wearit/utils/constants/sizes.dart';
 
@@ -26,7 +26,7 @@ class TPromoSlider extends StatelessWidget {
               onPageChanged: (index, _) => controller.updatePageIndicator(index)),
           items: banners.map((url) => Padding(
             padding: const EdgeInsets.symmetric(horizontal: 2),
-            child: TImageSlide(imagePath: url, fit: BoxFit.cover,),
+            child: TImageThumbnail(imagePath: url, fit: BoxFit.cover,),
           ),).toList(),
         ),
         Obx(() => Positioned(

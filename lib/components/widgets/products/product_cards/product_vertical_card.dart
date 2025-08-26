@@ -3,7 +3,7 @@ import 'package:iconsax/iconsax.dart';
 import 'package:wearit/components/widgets/buttons/icon_button.dart';
 import 'package:wearit/components/widgets/containers/rounded_container.dart';
 import 'package:wearit/components/widgets/headers/brand_item_header.dart';
-import 'package:wearit/components/widgets/images/image_slide.dart';
+import 'package:wearit/components/widgets/images/image_thumbnail.dart';
 import 'package:wearit/components/widgets/products/product_element/label_product.dart';
 import 'package:wearit/components/widgets/products/product_element/text_product.dart';
 import 'package:wearit/utils/constants/colors.dart';
@@ -38,7 +38,7 @@ class TProductVerticalCard extends StatelessWidget {
                 children: [
                   Stack(
                     children: [
-                      TImageSlide(
+                      TImageThumbnail(
                         width: 190,
                         height: 190,
                         imagePath: TImages.product1,

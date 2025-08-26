@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:wearit/utils/constants/colors.dart';
 import 'package:wearit/utils/constants/sizes.dart';
 
-class TImageSlide extends StatelessWidget {
-  const TImageSlide({
+class TImageThumbnail extends StatelessWidget {
+  const TImageThumbnail({
     super.key,
     this.width,
     this.height,
