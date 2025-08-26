@@ -47,9 +47,13 @@ class LoginForm extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Transform.scale(
-                    scale: 0.8,
-                    child: Checkbox(value: true, onChanged: (value){},)
+                  SizedBox(
+                    height: 20,
+                    width: 20,
+                    child: Checkbox(
+                      value: false,
+                      onChanged: (value) {},
+                    )
                   ),
                   Text(
                     TTexts.rememberMe, 
