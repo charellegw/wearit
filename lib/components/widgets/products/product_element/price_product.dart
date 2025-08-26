@@ -6,7 +6,6 @@ class TPriceProduct extends StatelessWidget {
     super.key,
     required this.text,
     this.currency = '\$',
-    this.isSmallText = false,
     this.isDiscountPrice = false,
     this.maxLines = 1,
     this.align = TextAlign.left, 
@@ -15,7 +14,6 @@ class TPriceProduct extends StatelessWidget {
   });
 
   final String text, currency;
-  final bool isSmallText;
   final bool isDiscountPrice;
   final int maxLines;
   final TextAlign align;

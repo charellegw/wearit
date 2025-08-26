@@ -23,8 +23,7 @@ class TImages {
   static const String mailbox = "assets/images/animations/Mailbox.json";
   static const String successCheck = "assets/images/animations/success-check-fill-FPiuzFU9Hy.json";
 
-
-  // Icons: Auth
+  // Icons: Social Media
   static const String iGoogle = "assets/icons/auth/google.png";
   static const String iFacebook = "assets/icons/auth/facebook.png";
 
@@ -38,15 +37,13 @@ class TImages {
   static const String iShoes = "assets/icons/category/shoe.png";
   static const String iAccs = "assets/icons/category/accessories.png";
 
-  // Icons: Navigation
-  static const String iAccount = "assets/icons/auth/user.svg";
-
   // Icons: Profile
   static const String profilePicture = "";
 
-  // Icons: Utility
-  static const String iSearch = "";
-  static const String iFilter = "";
+  // Icons: Payment Methods
+  static const String iMastercard = "assets/icons/payment_methods/Mastercard_Logo.png";
+  static const String iPaypal = "assets/icons/payment_methods/paypal_logo.png";
+  
 
   // Icons: Brands
   static const String iNike = "";

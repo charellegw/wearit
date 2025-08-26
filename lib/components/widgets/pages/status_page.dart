@@ -79,7 +79,7 @@ class TStatusPage extends StatelessWidget {
                 subtitle,
                 style: Theme.of(context)
                     .textTheme
-                    .labelLarge!
+                    .bodySmall!
                     .copyWith(color: TColors.textSecondary),
                 textAlign: TextAlign.center,
               ),

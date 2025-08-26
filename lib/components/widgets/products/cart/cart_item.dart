@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wearit/components/widgets/brands/brand_text.dart';
 import 'package:wearit/components/widgets/images/image_thumbnail.dart';
+import 'package:wearit/components/widgets/products/product_element/price_product.dart';
 import 'package:wearit/components/widgets/products/product_element/text_product.dart';
 import 'package:wearit/utils/constants/colors.dart';
 import 'package:wearit/utils/constants/images_string.dart';
@@ -47,7 +48,9 @@ class TCartItem extends StatelessWidget {
                     TextSpan(text: '38.5 ', style: Theme.of(context).textTheme.bodySmall),
                   ]
                 ),
-              )
+              ),
+
+              TPriceProduct(text: '119', textSize: 16,),
             ],
           ),
         )
