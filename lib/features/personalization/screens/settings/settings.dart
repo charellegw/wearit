@@ -59,7 +59,7 @@ class SettingsScreen extends StatelessWidget {
                   TSettingsMenuTile(icon: Iconsax.receipt, title: 'My Orders', subtitle: 'Check order progress and history of order'),
                   TSettingsMenuTile(icon: Iconsax.wallet, title: 'Payment Methods', subtitle: 'Set payment methods'),
                   TSettingsMenuTile(icon: Iconsax.discount_shape, title: 'Voucher Coupons', subtitle: 'List of all the voucher coupons'),
-                  TSettingsMenuTile(icon: Iconsax.discount_shape, title: 'Voucher Coupons', subtitle: 'Set any kind of notification message notification'),
+                  TSettingsMenuTile(icon: Iconsax.discount_shape, title: 'Notifications', subtitle: 'Set any kind of message notifications'),
                   TSettingsMenuTile(icon: Iconsax.security_card, title: 'Account Privacy', subtitle: 'Manage data usage and connected accounts'),
                   const SizedBox( height: TSizes.sectionGap, ),
 

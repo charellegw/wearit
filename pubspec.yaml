@@ -61,6 +61,7 @@ flutter:
     - assets/icons/auth/
     - assets/icons/category/
     - assets/icons/brands/
+    - assets/icons/avatar/
     - assets/icons/payment_methods/
     - assets/images/onboarding/
     - assets/images/status/

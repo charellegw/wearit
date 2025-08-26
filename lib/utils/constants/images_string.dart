@@ -23,6 +23,9 @@ class TImages {
   static const String mailbox = "assets/images/animations/Mailbox.json";
   static const String successCheck = "assets/images/animations/success-check-fill-FPiuzFU9Hy.json";
 
+  // Icons: Avatar
+  static const String iAvatarGirl = "assets/icons/avatar/avatar.png";
+  
   // Icons: Social Media
   static const String iGoogle = "assets/icons/auth/google.png";
   static const String iFacebook = "assets/icons/auth/facebook.png";
