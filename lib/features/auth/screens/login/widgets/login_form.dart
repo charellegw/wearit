@@ -17,7 +17,7 @@ class LoginForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isDark = THelper.isDarkMode(context);
+    final darkMode = THelper.isDarkMode(context);
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: TSizes.bigSectionGap),
       child: Form(child: Column(
@@ -38,7 +38,7 @@ class LoginForm extends StatelessWidget {
             ),
           ),
       
-          const SizedBox(height: TSizes.xs,),
+          const SizedBox(height: TSizes.md,),
       
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -55,6 +55,9 @@ class LoginForm extends StatelessWidget {
                       onChanged: (value) {},
                     )
                   ),
+
+                  const SizedBox(width: TSizes.textGap),
+
                   Text(
                     TTexts.rememberMe, 
                     style: Theme.of(context).textTheme.labelLarge?.copyWith(color: TColors.textSecondary),
@@ -96,8 +99,8 @@ class LoginForm extends StatelessWidget {
                 child: ElevatedButton(
                   onPressed: () => Get.to(() => const SignupScreen()), 
                   style: ElevatedButton.styleFrom(
-                    foregroundColor: isDark ? TColors.textWhite : TColors.textPrimary,
-                    backgroundColor: isDark ? TColors.backgroundDark : TColors.buttonSecondary,
+                    foregroundColor: darkMode ? TColors.textWhite : TColors.textPrimary,
+                    backgroundColor: darkMode ? TColors.backgroundDark : TColors.buttonSecondary,
                   ),
                   child: Text(TTexts.createAccountButton, style: Theme.of(context).textTheme.bodyLarge,),
                 ),

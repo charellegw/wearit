@@ -77,7 +77,7 @@ class StatusPages {
       title: TTexts.orderSuccessTitle,
       subtitle: TTexts.orderSuccessSubtitle,
       appBarButtonVisibility: false,
-      primaryButtonText: TTexts.continueButton,
+      primaryButtonText: 'Continue Shopping',
       onPrimaryPressed: () => Get.offAll(() => const NavigationMenu()),
     );
   }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:wearit/components/widgets/buttons/icon_button.dart';
 import 'package:wearit/components/widgets/containers/rounded_container.dart';
@@ -6,6 +7,7 @@ import 'package:wearit/components/widgets/headers/brand_item_header.dart';
 import 'package:wearit/components/widgets/images/image_thumbnail.dart';
 import 'package:wearit/components/widgets/products/product_element/label_product.dart';
 import 'package:wearit/components/widgets/products/product_element/text_product.dart';
+import 'package:wearit/features/store/screens/product_details/product_details.dart';
 import 'package:wearit/utils/constants/colors.dart';
 import 'package:wearit/utils/constants/images_string.dart';
 import 'package:wearit/utils/constants/sizes.dart';
@@ -21,7 +23,7 @@ class TProductVerticalCard extends StatelessWidget {
     final darkMode = THelper.isDarkMode(context);
 
     return GestureDetector(
-      onTap: () {},
+      onTap: () => Get.to(() => const ProductDetailsScreen()),
       child: Container(
         width: 190,
         padding: const EdgeInsets.all(1),

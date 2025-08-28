@@ -27,7 +27,7 @@ class AddressItem extends StatelessWidget {
         children: [
           Positioned(
             top: 0,
-            right: 0,
+            right: 10,
             child: Icon(
               selectedAddress ? Iconsax.tick_circle5 : null,
               color: selectedAddress ? (darkMode ? Colors.white : Colors.black) : null,
@@ -36,31 +36,37 @@ class AddressItem extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                'Home',
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-                style: Theme.of(context).textTheme.bodySmall,
-              ),
-              const SizedBox(height: TSizes.textGap,),
+              /// Recipient's Name
               Text(
                 'Charelle Winarto',
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
-                style: Theme.of(context).textTheme.labelLarge!.copyWith(color: TColors.textSecondary),
+                style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontWeight: FontWeight.w600),
               ),
-              const SizedBox(height: TSizes.textGap,),
+              const SizedBox(height: TSizes.defaultGap,),
+
+              /// Recipient's Phone Number
               Text(
                 '(+62) 82192034034',
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
-                style: Theme.of(context).textTheme.labelLarge!.copyWith(color: TColors.textSecondary),
+                style: Theme.of(context).textTheme.bodySmall!.copyWith(color: selectedAddress ? null : TColors.textSecondary),
               ),
               const SizedBox(height: TSizes.textGap,),
+
+              /// Street
               Text(
-                'Jl. Ilir Raya Gg.3 no.25, Palmerah, Kec.Palmerah, 11430, Jakarta Barat',
+                'Jl. Raya Kb. Jeruk No. 27, RT.1/RW.9',
                 softWrap: true,
-                style: Theme.of(context).textTheme.labelLarge!.copyWith(color: TColors.textSecondary),
+                style: Theme.of(context).textTheme.bodySmall!.copyWith(color: selectedAddress ? null : TColors.textSecondary),
+              ),
+              const SizedBox(height: TSizes.textGap,),
+
+              /// City, State, Country, Postal Code
+              Text(
+                'KEMANGGISAN, PALMERAH, JAKARTA BARAT, INDONESIA 11530',
+                softWrap: true,
+                style: Theme.of(context).textTheme.bodySmall!.copyWith(color: selectedAddress ? null : TColors.textSecondary),
               ),
             ],
           )

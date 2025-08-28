@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:wearit/components/styles/spacing_style.dart';
 import 'package:wearit/components/widgets/buttons/social_buttons.dart';
 import 'package:wearit/components/widgets/dividers/text_divider.dart';
 import 'package:wearit/components/widgets/headers/text_header.dart';
 import 'package:wearit/features/auth/screens/signup/widgets/signup_form.dart';
 import 'package:wearit/utils/constants/text_string.dart';
+import 'package:wearit/utils/helpers/helper.dart';
 
 class SignupScreen extends StatelessWidget {
   const SignupScreen({super.key});
@@ -12,7 +14,9 @@ class SignupScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {    
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        leading: IconButton(onPressed: Get.back, icon: Icon(Icons.keyboard_arrow_left, color: THelper.isDarkMode(context) ? Colors.white : Colors.black),)
+      ),
       body: SingleChildScrollView(
         child: Padding(
           padding: TSpacingStyle.paddingDefault,

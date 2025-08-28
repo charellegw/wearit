@@ -31,8 +31,39 @@ class AddAddressScreen extends StatelessWidget {
                 
                 TextFormField(
                   decoration: InputDecoration(
-                      prefixIcon: Icon(Iconsax.mobile),
-                      labelText: 'Recipient\'s Phone Number'),
+                      prefixIcon: Icon(Iconsax.call),
+                      labelText: 'Phone Number'),
+                ),
+                const SizedBox(height: TSizes.textFieldGap,),
+
+                TextFormField(
+                  minLines: 1,
+                  maxLines: null,
+                  expands: false,
+                  decoration: InputDecoration(
+                      prefixIcon: Icon(Iconsax.house_2),
+                      labelText: 'Street'),
+                ),
+                const SizedBox(height: TSizes.sectionGap,),
+
+                Row(
+                  children: [
+                    Expanded(
+                      child: TextFormField(
+                        decoration: InputDecoration(
+                          prefixIcon: Icon(Iconsax.building),
+                          labelText: 'City'),
+                      ),
+                    ),
+                    const SizedBox(width: TSizes.textFieldGap,),
+                    Expanded(
+                      child: TextFormField(
+                        decoration: InputDecoration(
+                            prefixIcon: Icon(Iconsax.location),
+                            labelText: 'State'),
+                      ),
+                    ),
+                  ],
                 ),
                 const SizedBox(height: TSizes.textFieldGap,),
 
@@ -41,8 +72,8 @@ class AddAddressScreen extends StatelessWidget {
                     Expanded(
                       child: TextFormField(
                         decoration: InputDecoration(
-                            prefixIcon: Icon(Iconsax.building_31),
-                            labelText: 'Street'),
+                            prefixIcon: Icon(Iconsax.global),
+                            labelText: 'Country'),
                       ),
                     ),
                     const SizedBox(width: TSizes.textFieldGap,),
@@ -57,33 +88,6 @@ class AddAddressScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: TSizes.textFieldGap,),
 
-                Row(
-                  children: [
-                    Expanded(
-                      child: TextFormField(
-                        decoration: InputDecoration(
-                            prefixIcon: Icon(Iconsax.building),
-                            labelText: 'City'),
-                      ),
-                    ),
-                    const SizedBox(width: TSizes.textFieldGap,),
-                    Expanded(
-                      child: TextFormField(
-                        decoration: InputDecoration(
-                            prefixIcon: Icon(Iconsax.activity),
-                            labelText: 'State'),
-                      ),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: TSizes.textFieldGap,),
-
-                TextFormField(
-                  decoration: InputDecoration(
-                      prefixIcon: Icon(Iconsax.global),
-                      labelText: 'Country'),
-                ),
-                const SizedBox(height: TSizes.sectionGap,),
 
                 SizedBox(
                 width: double.infinity,

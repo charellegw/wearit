@@ -23,7 +23,7 @@ class CartScreen extends StatelessWidget {
         child: TCartList(),
       ),
       bottomNavigationBar: Container(
-        padding: EdgeInsets.all(TSizes.defaultGap),
+        padding: TSpacingStyle.paddingDefault,
         decoration: BoxDecoration(
           color: THelper.isDarkMode(context) ? TColors.backgroundDark : TColors.backgroundLight,
         ),
