@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:wearit/components/styles/spacing_style.dart';
 import 'package:wearit/components/widgets/app_bar/app_bar.dart';
 import 'package:wearit/components/widgets/products/product_element/price_product.dart';
-import 'package:wearit/features/store/screens/cart/widgets/cart_items.dart';
+import 'package:wearit/features/store/screens/cart/widgets/cart_list.dart';
 import 'package:wearit/features/store/screens/checkout/checkout.dart';
 import 'package:wearit/utils/constants/colors.dart';
 import 'package:wearit/utils/constants/sizes.dart';
@@ -20,7 +20,7 @@ class CartScreen extends StatelessWidget {
       ),
       body: Padding(
         padding: TSpacingStyle.paddingDefault,
-        child: TCartItems(),
+        child: TCartList(),
       ),
       bottomNavigationBar: Container(
         padding: EdgeInsets.all(TSizes.defaultGap),

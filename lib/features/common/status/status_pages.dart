@@ -21,7 +21,7 @@ class StatusPages {
     VoidCallback? onResend,
   }) {
     return TStatusPage(
-      imagePath: TImages.mailbox,
+      animationPath: TImages.mailbox,
       title: TTexts.verifyEmailTitle,
       subtitle: TTexts.verifyEmailSubtitle,
       appBarButtonVisibility: true,
@@ -37,7 +37,7 @@ class StatusPages {
   /// Pressing continue button will be directing user to login screen.
   static TStatusPage signupSuccess() {
     return TStatusPage(
-      imagePath: TImages.successCheck,
+      animationPath: TImages.successCheck,
       title: TTexts.signupSuccessTitle,
       subtitle: TTexts.signUpSuccessSubtitle,
       appBarButtonVisibility: false,
@@ -57,7 +57,7 @@ class StatusPages {
     VoidCallback? onResend,
   }) {
     return TStatusPage(
-      imagePath: TImages.mailbox,
+      animationPath: TImages.mailbox,
       title: TTexts.passwordResetEmailTitle,
       subtitle: TTexts.passwordResetEmailSubtitle,
       appBarButtonVisibility: false,
@@ -73,7 +73,7 @@ class StatusPages {
   /// Pressing continue button will be directing user to navigation menu.
   static TStatusPage orderSuccess() {
     return TStatusPage(
-      imagePath: TImages.successCheck,
+      animationPath: TImages.successCheck,
       title: TTexts.orderSuccessTitle,
       subtitle: TTexts.orderSuccessSubtitle,
       appBarButtonVisibility: false,

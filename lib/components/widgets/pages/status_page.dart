@@ -3,11 +3,13 @@ import 'package:get/get.dart';
 import 'package:wearit/utils/constants/colors.dart';
 import 'package:wearit/utils/constants/sizes.dart';
 import 'package:wearit/utils/helpers/helper.dart';
+import 'package:lottie/lottie.dart';
 
 class TStatusPage extends StatelessWidget {
   const TStatusPage({
     super.key,
-    required this.imagePath,
+    this.imagePath,
+    this.animationPath,
     required this.title,
     required this.subtitle,
     required this.primaryButtonText,
@@ -18,7 +20,8 @@ class TStatusPage extends StatelessWidget {
     this.onSecondaryPressed,
   });
 
-  final String imagePath, title, subtitle, primaryButtonText;
+  final String? imagePath, animationPath;
+  final String title, subtitle, primaryButtonText;
   final bool appBarButtonVisibility;
   final VoidCallback onPrimaryPressed;
   final String? secondaryButtonText, highlightText;
@@ -50,10 +53,13 @@ class TStatusPage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Image(
-                width: TSizes.imageLg,
-                image: AssetImage(imagePath),
-              ),
+              if (animationPath != null && imagePath == null) 
+                Lottie.asset(animationPath!, width: MediaQuery.of(context).size.width * 0.6),
+              if (animationPath == null && imagePath != null)
+                Image(
+                  width: TSizes.imageLg,
+                  image: AssetImage(imagePath!),
+                ),
               const SizedBox(
                 height: TSizes.sectionGap,
               ),
