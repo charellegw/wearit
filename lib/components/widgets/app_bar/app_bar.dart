@@ -33,7 +33,7 @@ class TAppBar extends StatelessWidget implements PreferredSizeWidget {
         leading: backButtonVisibility 
                   ? IconButton(onPressed: Get.back, icon: Icon(Iconsax.arrow_left, color: backButtonColor ?? (darkMode ? Colors.white : Colors.black),))
                   : (leadingIcon != null) ? IconButton(onPressed: leadingOnPressed, icon: Icon(leadingIcon!)) : null,
-        titleSpacing: 0,
+        titleSpacing: backButtonVisibility ? 0 : TSizes.horizontalPadding,
         title: title,
         actions: actions,
       ),

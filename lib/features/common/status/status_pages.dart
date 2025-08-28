@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:wearit/components/widgets/pages/status_page.dart';
 import 'package:wearit/features/auth/screens/login/login.dart';
+import 'package:wearit/navigation_menu.dart';
 import 'package:wearit/utils/constants/images_string.dart';
 import 'package:wearit/utils/constants/text_string.dart';
 
 class StatusPages {
-
+  StatusPages._();
+  
   /// Status page with option to continue and resend the verification email.
   /// 
   /// Parameters:
@@ -37,7 +39,7 @@ class StatusPages {
     return TStatusPage(
       imagePath: TImages.successCheck,
       title: TTexts.signupSuccessTitle,
-      subtitle: TTexts.signupSuccessTitle,
+      subtitle: TTexts.signUpSuccessSubtitle,
       appBarButtonVisibility: false,
       primaryButtonText: TTexts.continueButton,
       onPrimaryPressed: () => Get.offAll(() => LoginScreen()),
@@ -66,5 +68,19 @@ class StatusPages {
       highlightText: email,
     );
   }
+
+  /// Status page successfully create an order.
+  /// Pressing continue button will be directing user to navigation menu.
+  static TStatusPage orderSuccess() {
+    return TStatusPage(
+      imagePath: TImages.successCheck,
+      title: TTexts.orderSuccessTitle,
+      subtitle: TTexts.orderSuccessSubtitle,
+      appBarButtonVisibility: false,
+      primaryButtonText: TTexts.continueButton,
+      onPrimaryPressed: () => Get.offAll(() => const NavigationMenu()),
+    );
+  }
+
 
 }              
