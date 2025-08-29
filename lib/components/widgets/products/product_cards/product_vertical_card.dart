@@ -92,7 +92,9 @@ class TProductVerticalCard extends StatelessWidget {
                       const SizedBox(
                         height: TSizes.textGap,
                       ),
-                      // Spacer(),
+
+                      // const Spacer(),
+
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [

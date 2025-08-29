@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wearit/components/styles/spacing_style.dart';
+import 'package:wearit/components/widgets/app_bar/app_bar.dart';
 import 'package:wearit/features/store/screens/product_details/product_meta_data.dart';
 import 'package:wearit/features/store/screens/product_details/widgets/product_image_slider.dart';
 import 'package:wearit/features/store/screens/product_details/widgets/rating_share.dart';
@@ -12,7 +13,10 @@ class ProductDetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     // final darkMode = THelper.isDarkMode(context);
     return Scaffold(
-      // bottomNavigationBar: ,
+      appBar: TAppBar(
+        backButtonVisibility: true,
+        title: Text( 'My Addresses', style: Theme.of(context) .textTheme .headlineLarge! .copyWith(fontWeight: FontWeight.w600), ),
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -30,6 +34,7 @@ class ProductDetailsScreen extends StatelessWidget {
           ],
         ),
       ),
+      // bottomNavigationBar: ,
     );
   }
 }
