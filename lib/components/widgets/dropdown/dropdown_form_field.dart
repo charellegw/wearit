@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wearit/utils/constants/colors.dart';
-import 'package:wearit/utils/constants/sizes.dart';
+import 'package:wearit/utils/helpers/helper.dart';
 
 /// A dropdown form field with optional title to be displayed.
 class TDropdownFormField extends StatelessWidget {
@@ -19,19 +18,23 @@ class TDropdownFormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final darkMode = THelper.isDarkMode(context);
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        if(title != null) ...[
-          Text(title!, style: Theme.of(context).textTheme.labelLarge!.copyWith(color: TColors.textSecondary),),
-          const SizedBox(height: TSizes.textGap,),
-        ],
           
         DropdownButtonFormField(
+          hint: (title != null) ? Text(title!) : null,
+          decoration: InputDecoration(prefixIcon: Icon(icon),),
+          style: TextStyle(
+            fontSize: 14, 
+            color: darkMode ? Colors.white : Colors.black,
+          ),
+
           onChanged: onChanged,
-          decoration: InputDecoration(prefixIcon: Icon(icon)),
           items: items.map((option) => DropdownMenuItem(
               value: option, 
-              child: Text(option)
+              child: Text(option),
             )).toList(),
         )
       ],

@@ -18,7 +18,7 @@ class TProductGridWithFilters extends StatelessWidget {
         const SizedBox(height: TSizes.sectionGap,),
     
         TGridLayout(
-          itemCount: 4,
+          itemCount: 8,
           itemBuilder: (_, index) => const TProductVerticalCard()
         ),
       ],
