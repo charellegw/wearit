@@ -10,7 +10,7 @@ class TGridLayout extends StatelessWidget {
   });
 
   final int itemCount;
-  final NullableIndexedWidgetBuilder itemBuilder;
+  final Widget? Function(BuildContext, int) itemBuilder;
   final double mainAxisExtent;
 
   @override

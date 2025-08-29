@@ -3,17 +3,15 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:wearit/components/widgets/app_bar/app_bar.dart';
 import 'package:wearit/components/widgets/app_bar/tab_bar.dart';
-import 'package:wearit/components/widgets/brands/brand_text.dart';
+import 'package:wearit/components/widgets/brands/brand_card.dart';
 import 'package:wearit/components/widgets/buttons/icon_button_with_badge.dart';
-import 'package:wearit/components/widgets/containers/rounded_container.dart';
 import 'package:wearit/components/widgets/headers/section_header.dart';
-import 'package:wearit/components/widgets/images/circular_image.dart';
 import 'package:wearit/components/widgets/layouts/grid_layout.dart';
 import 'package:wearit/components/widgets/products/product_cards/product_vertical_card.dart';
 import 'package:wearit/components/widgets/search/search_bar.dart';
+import 'package:wearit/features/store/screens/brands/brands.dart';
 import 'package:wearit/features/store/screens/cart/cart.dart';
 import 'package:wearit/utils/constants/colors.dart';
-import 'package:wearit/utils/constants/images_string.dart';
 import 'package:wearit/utils/constants/sizes.dart';
 import 'package:wearit/utils/helpers/helper.dart';
 
@@ -56,41 +54,11 @@ class ShopScreen extends StatelessWidget {
                       ),
                       const SizedBox( height: TSizes.sectionGap, ),
       
-                      TSectionHeader(title: 'Featured Brands', buttonVisible: true, buttonOnPressed: (){},),
+                      TSectionHeader(title: 'Featured Brands', buttonVisible: true, buttonOnPressed: () => Get.to(() => const BrandsScreen()),),
                       const SizedBox( height: TSizes.defaultGap, ),
                       
                       TGridLayout(itemCount: 4, mainAxisExtent: 50, itemBuilder: (_, index) {
-                        return GestureDetector(
-                          onTap: (){},
-                          child: TRoundedContainer(
-                            padding: const EdgeInsets.all(TSizes.sm),
-                            borderVisibility: true,
-                            borderColor: darkMode ? TColors.borderSecondary.withAlpha(120) : TColors.containerLight,
-                            backgroundColor: darkMode ? TColors.containerDark : TColors.containerLight,
-                            child: Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Flexible(child: TCircularImage(imagePath: TImages.iNewBalance,)),
-                                const SizedBox( width: TSizes.defaultGap, ),
-                          
-                                Expanded(
-                                  child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: [
-                                      TBrandName(brandName: 'New balance', textColor: darkMode ? Colors.white : Colors.black,),
-                                      Text(
-                                        '133 products',
-                                        overflow: TextOverflow.ellipsis,
-                                        style: Theme.of(context).textTheme.labelMedium!.copyWith(color: TColors.textSecondary),
-                                        textAlign: TextAlign.left,
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        );
+                        return TBrandCard();
                       },
                       ),
                     ],
@@ -121,6 +89,8 @@ class ShopScreen extends StatelessWidget {
                       children: [
                         const SizedBox(height: TSizes.defaultGap,),
                         TGridLayout(itemCount: 6, itemBuilder: (_, index) => TProductVerticalCard(), ),
+                        const SizedBox(height: TSizes.sectionGap,),
+                        const Divider(),
                         const SizedBox(height: TSizes.sectionGap,),
                   
                         TSectionHeader(title: 'You might like', buttonOnPressed: (){},),

@@ -1,0 +1,28 @@
+import 'package:flutter/material.dart';
+import 'package:wearit/components/widgets/dropdown/filter_sort_dropdown.dart';
+import 'package:wearit/components/widgets/layouts/grid_layout.dart';
+import 'package:wearit/components/widgets/products/product_cards/product_vertical_card.dart';
+import 'package:wearit/utils/constants/sizes.dart';
+
+/// Products grid view with sort and filter dropdown
+class TProductGridWithFilters extends StatelessWidget {
+  const TProductGridWithFilters({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        TFilterSortDropdown(),
+        const SizedBox(height: TSizes.sectionGap,),
+    
+        TGridLayout(
+          itemCount: 4,
+          itemBuilder: (_, index) => const TProductVerticalCard()
+        ),
+      ],
+    );
+  }
+}
+
