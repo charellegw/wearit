@@ -33,7 +33,7 @@ class TProductReviewCard extends StatelessWidget {
             ),
         
             /// More Button
-            TIconButton(icon: Icons.more_horiz)
+            TIconButton(icon: Icons.more_horiz, backgroundColor: Colors.transparent,)
           ],
         ),
         const SizedBox(height: TSizes.defaultGap,),
@@ -67,7 +67,7 @@ class TProductReviewCard extends StatelessWidget {
         TRoundedContainer(
           padding: EdgeInsets.all(TSizes.md),
           borderVisibility: true,
-          borderColor: darkMode ? TColors.borderSecondary.withAlpha(120) : null,
+          borderColor: TColors.borderSecondary.withAlpha(120),
           backgroundColor: darkMode ? TColors.containerDark : TColors.containerLightGrey,
           child: Column(
             children: [

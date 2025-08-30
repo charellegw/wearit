@@ -16,7 +16,7 @@ class SubCategoryScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: TAppBar(
-        title: Text( 'My Orders', style: Theme.of(context) .textTheme .headlineLarge! .copyWith(fontWeight: FontWeight.w600),),
+        title: Text( 'Category: Bags', style: Theme.of(context) .textTheme .headlineLarge! .copyWith(fontWeight: FontWeight.w600),),
         backButtonVisibility: true,
       ),
       body: SingleChildScrollView(

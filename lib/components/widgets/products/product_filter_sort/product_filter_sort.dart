@@ -5,16 +5,20 @@ import 'package:wearit/components/widgets/products/product_cards/product_vertica
 import 'package:wearit/utils/constants/sizes.dart';
 
 /// Products grid view with sort and filter dropdown
-class TProductGridWithFilters extends StatelessWidget {
-  const TProductGridWithFilters({
+class TProductWithFilterSort extends StatelessWidget {
+  const TProductWithFilterSort({
     super.key,
+    this.showFilter = true,
+    this.showSort = true,
   });
+
+  final bool showFilter, showSort;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        TFilterSortDropdown(),
+        TFilterSortDropdown(showFilter: showFilter, showSort: showSort,),
         const SizedBox(height: TSizes.sectionGap,),
     
         TGridLayout(

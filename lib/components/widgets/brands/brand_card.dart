@@ -22,6 +22,7 @@ class TBrandCard extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: TRoundedContainer(
+        width: double.infinity,
         padding: const EdgeInsets.all(TSizes.sm),
         borderVisibility: true,
         borderColor: darkMode ? TColors.borderSecondary.withAlpha(120) : TColors.containerLight,
@@ -35,6 +36,8 @@ class TBrandCard extends StatelessWidget {
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisSize: MainAxisSize.max,
                 children: [
                   TBrandName(brandName: 'New balance', textColor: darkMode ? Colors.white : Colors.black,),
                   Text(

@@ -8,8 +8,10 @@ import 'package:wearit/components/widgets/buttons/icon_button_with_badge.dart';
 import 'package:wearit/components/widgets/headers/section_header.dart';
 import 'package:wearit/components/widgets/layouts/grid_layout.dart';
 import 'package:wearit/components/widgets/products/product_cards/product_vertical_card.dart';
+import 'package:wearit/components/widgets/products/products_section.dart/recommendation_section.dart';
 import 'package:wearit/components/widgets/search/search_bar.dart';
-import 'package:wearit/features/store/screens/brands/brands.dart';
+import 'package:wearit/features/store/screens/brands/brand_profile.dart';
+import 'package:wearit/features/store/screens/brands/all_brands.dart';
 import 'package:wearit/features/store/screens/cart/cart.dart';
 import 'package:wearit/utils/constants/colors.dart';
 import 'package:wearit/utils/constants/sizes.dart';
@@ -54,11 +56,11 @@ class ShopScreen extends StatelessWidget {
                       ),
                       const SizedBox( height: TSizes.sectionGap, ),
       
-                      TSectionHeader(title: 'Featured Brands', buttonVisible: true, buttonOnPressed: () => Get.to(() => const BrandsScreen()),),
+                      TSectionHeader(title: 'Featured Brands', buttonVisible: true, buttonOnPressed: () => Get.to(() => const AllBrandsScreen()),),
                       const SizedBox( height: TSizes.defaultGap, ),
                       
-                      TGridLayout(itemCount: 4, mainAxisExtent: 50, itemBuilder: (_, index) {
-                        return TBrandCard();
+                      TGridLayout(itemCount: 4, mainAxisExtent: 60, itemBuilder: (_, index) {
+                        return TBrandCard(onTap: () => Get.to(() => const BrandProfileScreen()),);
                       },
                       ),
                     ],
@@ -89,16 +91,9 @@ class ShopScreen extends StatelessWidget {
                       children: [
                         const SizedBox(height: TSizes.defaultGap,),
                         TGridLayout(itemCount: 6, itemBuilder: (_, index) => TProductVerticalCard(), ),
-                        const SizedBox(height: TSizes.sectionGap,),
-                        const Divider(),
-                        const SizedBox(height: TSizes.sectionGap,),
-                  
-                        TSectionHeader(title: 'You might like', buttonOnPressed: (){},),
-                        const SizedBox(height: TSizes.defaultGap,),
 
-                        TGridLayout(itemCount: 4, itemBuilder: (_, index) => TProductVerticalCard(), ),
-                        const SizedBox(height: TSizes.defaultGap,),
-                  
+                        const SizedBox(height: TSizes.sectionGap,),
+                        TRecommendationSection(),
                       ],
                     ),
                   ),

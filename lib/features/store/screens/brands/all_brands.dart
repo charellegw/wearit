@@ -6,9 +6,10 @@ import 'package:wearit/components/widgets/brands/brand_card.dart';
 import 'package:wearit/components/widgets/headers/section_header.dart';
 import 'package:wearit/components/widgets/layouts/grid_layout.dart';
 import 'package:wearit/features/store/screens/brands/brand_profile.dart';
+import 'package:wearit/utils/constants/sizes.dart';
 
-class BrandsScreen extends StatelessWidget {
-  const BrandsScreen({super.key});
+class AllBrandsScreen extends StatelessWidget {
+  const AllBrandsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,12 +26,12 @@ class BrandsScreen extends StatelessWidget {
               TSectionHeader(
                 title: 'All Brands'
               ),
+              const SizedBox(height: TSizes.sectionGap,),
               TGridLayout(
                 itemCount: 7, 
                 itemBuilder: (_, index) => TBrandCard(onTap: () => Get.to(() => const BrandProfileScreen()),),
-                mainAxisExtent: 80,
+                mainAxisExtent: 60,
               ),
-
             ],
           ),
         ),

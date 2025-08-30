@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wearit/utils/constants/sizes.dart';
 import 'package:wearit/utils/helpers/helper.dart';
 
 /// A dropdown form field with optional title to be displayed.
@@ -24,11 +25,12 @@ class TDropdownFormField extends StatelessWidget {
       children: [
           
         DropdownButtonFormField(
-          hint: (title != null) ? Text(title!) : null,
-          decoration: InputDecoration(prefixIcon: Icon(icon),),
+          hint: (title != null) ? Text(title!, overflow: TextOverflow.ellipsis,) : null,
+          decoration: InputDecoration(prefixIcon: Icon(icon, size: TSizes.iconSm,),),
           style: TextStyle(
-            fontSize: 14, 
+            fontSize: 12, 
             color: darkMode ? Colors.white : Colors.black,
+            overflow: TextOverflow.ellipsis
           ),
 
           onChanged: onChanged,
