@@ -11,6 +11,7 @@ import 'package:wearit/features/auth/screens/login/login.dart';
 import 'package:wearit/features/personalization/screens/address/address.dart';
 import 'package:wearit/features/personalization/screens/profile/profile.dart';
 import 'package:wearit/features/store/screens/cart/cart.dart';
+import 'package:wearit/features/store/screens/notification/notification.dart';
 import 'package:wearit/features/store/screens/order/order.dart';
 import 'package:wearit/utils/constants/colors.dart';
 import 'package:wearit/utils/constants/sizes.dart';
@@ -60,7 +61,7 @@ class SettingsScreen extends StatelessWidget {
                   TSettingsMenuTile(icon: Iconsax.receipt, title: 'My Orders', subtitle: 'Check order progress and history of order', onTap: () => Get.to(() => const OrderScreen()),),
                   TSettingsMenuTile(icon: Iconsax.wallet, title: 'Payment Methods', subtitle: 'Set payment methods'),
                   TSettingsMenuTile(icon: Iconsax.discount_shape, title: 'Voucher Coupons', subtitle: 'List of all the voucher coupons'),
-                  TSettingsMenuTile(icon: Iconsax.notification, title: 'Notifications', subtitle: 'Set any kind of message notifications'),
+                  TSettingsMenuTile(icon: Iconsax.notification, title: 'Notifications', subtitle: 'Set any kind of message notifications', onTap: () => Get.to(() => const NotificationScreen()),),
                   TSettingsMenuTile(icon: Iconsax.security_card, title: 'Account Privacy', subtitle: 'Manage data usage and connected accounts'),
                   const SizedBox( height: TSizes.sectionGap, ),
 
@@ -68,7 +69,7 @@ class SettingsScreen extends StatelessWidget {
                   const SizedBox( height: TSizes.sectionGap, ),
                   TSettingsMenuTile(icon: Iconsax.moon, title: 'Dark mode', subtitle: 'Set the application appereance'),
                   TSettingsMenuTile(icon: Iconsax.image, title: 'Data Saver', subtitle: 'Reduce your data consumption when using cellular data. Images may be at lower resolution.', trailing: Switch(value: false, onChanged: (value) {}),),
-                  TSettingsMenuTile(icon: Iconsax.location, title: 'Location Permission', subtitle: 'Allow to access your location', trailing: Switch(value: true, onChanged: (value) {}),),
+                  TSettingsMenuTile(icon: Iconsax.location, title: 'Location Permission', subtitle: 'Allow to access your location', trailing: Switch(value: true, onChanged: (value) {}, ),),
                   TSettingsMenuTile(icon: Iconsax.security_user, title: 'Safe Mode', subtitle: 'Search result is safe for all ages', trailing: Switch(value: false, onChanged: (value) {}),),
                   TSettingsMenuTile(icon: Iconsax.image, title: 'Data Saver', subtitle: 'Reduce your data consumption when using cellular data. Images may be at lower resolution.', trailing: Switch(value: false, onChanged: (value) {}),),
                   

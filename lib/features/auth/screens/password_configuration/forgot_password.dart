@@ -2,10 +2,8 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:wearit/components/widgets/pages/status_page.dart';
 import 'package:wearit/components/widgets/headers/text_header.dart';
-import 'package:wearit/features/auth/screens/login/login.dart';
-import 'package:wearit/utils/constants/images_string.dart';
+import 'package:wearit/features/common/status/status_pages.dart';
 import 'package:wearit/utils/constants/sizes.dart';
 import 'package:wearit/utils/constants/text_string.dart';
 
@@ -42,7 +40,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                 width: double.infinity,
                 height: TSizes.buttonHeight,
                 child: ElevatedButton(
-                  onPressed: () => Get.to(() => TStatusPage(imagePath: TImages.emailSent, title: TTexts.passwordResetEmailTitle, subtitle: TTexts.passwordResetEmailSubtitle, primaryButtonText: TTexts.continueButton, onPrimaryPressed: () => Get.offAll(() => LoginScreen()), appBarButtonVisibility: false, secondaryButtonText: TTexts.resendEmailButton, onSecondaryPressed: (){},)), 
+                  onPressed: () => Get.to(() => StatusPages.forgotPasswordEmail(email: 'charellewinarto@gmail.com')),
                   child: Text(
                     TTexts.submitButton,
                     style: Theme.of(context).textTheme.bodyLarge!.copyWith(color: Colors.white),
