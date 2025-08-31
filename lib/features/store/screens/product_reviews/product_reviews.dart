@@ -34,6 +34,7 @@ class ProductReviewsScreen extends StatelessWidget {
 
               /// Review Section
               ListView.separated(
+                physics: const NeverScrollableScrollPhysics(),
                 shrinkWrap: true,
                 itemCount: 4,
                 separatorBuilder: (_, __) => const SizedBox(height: TSizes.gridGap,),

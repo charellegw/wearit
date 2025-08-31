@@ -18,7 +18,7 @@ class AllProductsScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Padding(
           padding: TSpacingStyle.paddingDefault,
-          child: TProductWithFilterSort(),
+          child: TProductWithFilterSort(showFilter: false,),
         ),
       ),
     );

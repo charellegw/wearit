@@ -27,7 +27,7 @@ class BrandProfileScreen extends StatelessWidget {
               TSectionHeader(title: 'Products'),
               const SizedBox(height: TSizes.defaultGap,),
               
-              TProductWithFilterSort(showFilter: false,),
+              TProductWithFilterSort(),
             ],
           ),
         ),
