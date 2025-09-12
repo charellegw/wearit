@@ -3,7 +3,6 @@ import 'package:readmore/readmore.dart';
 import 'package:wearit/components/widgets/brands/brand_text.dart';
 import 'package:wearit/components/widgets/buttons/icon_button.dart';
 import 'package:wearit/components/widgets/containers/rounded_container.dart';
-import 'package:wearit/components/widgets/images/circular_image.dart';
 import 'package:wearit/features/store/screens/product_reviews/widgets/rating_bar_indicator.dart';
 import 'package:wearit/utils/constants/colors.dart';
 import 'package:wearit/utils/constants/images_string.dart';
@@ -26,9 +25,12 @@ class TProductReviewCard extends StatelessWidget {
             /// User Avatar & Name
             Row(
               children: [
-                TCircularImage(imagePath: TImages.iAvatarGirl, overlayColor: Colors.transparent,),
+                CircleAvatar(
+                  radius: 25,
+                  backgroundImage: AssetImage(TImages.profilePicture),
+                ),
                 const SizedBox(width: TSizes.defaultGap,),
-                Text('Michael Jackson', style: Theme.of(context).textTheme.bodyLarge,),
+                Text('CatLovers123', style: Theme.of(context).textTheme.bodyLarge,),
               ],
             ),
         

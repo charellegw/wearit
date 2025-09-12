@@ -44,7 +44,7 @@ class TProductHorizontalCard extends StatelessWidget {
                     width: 120,
                     height: 120,
                     imagePath: TImages.product1,
-                    fit: BoxFit.contain,
+                    fit: BoxFit.cover,
                     borderRadius: TSizes.cardRadius,
                     // border: Border.all(color: darkMode ? TColors.borderSecondary : Colors.white, width: 1),
                   ),

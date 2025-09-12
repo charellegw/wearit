@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:wearit/components/widgets/pages/status_page.dart';
+import 'package:wearit/data/repositories/authentication/authentication_repository.dart';
+import 'package:wearit/features/auth/controllers/signup/verify_email_controller.dart';
 import 'package:wearit/features/auth/screens/login/login.dart';
 import 'package:wearit/navigation_menu.dart';
 import 'package:wearit/utils/constants/images_string.dart';
@@ -17,8 +19,7 @@ class StatusPages {
   ///   - onResend: Callback when user clicks the "Resend Email" button.
   static TStatusPage verifyEmail({
     required String email,
-    required VoidCallback onContinue,
-    VoidCallback? onResend,
+    VoidCallback? onContinue,
   }) {
     return TStatusPage(
       animationPath: TImages.mailbox,
@@ -26,23 +27,24 @@ class StatusPages {
       subtitle: TTexts.verifyEmailSubtitle,
       appBarButtonVisibility: true,
       primaryButtonText: TTexts.continueButton,
-      onPrimaryPressed: onContinue, 
+      onPrimaryPressed: onContinue ?? () => Get.put(VerifyEmailController()).checkEmailVerifiedStatus(), 
       secondaryButtonText: TTexts.resendEmailButton,
-      onSecondaryPressed: onResend ?? () {},
+      onSecondaryPressed: () => Get.put(VerifyEmailController()).sendEmailVerification(),
       highlightText: email,
+      onCrossButtonPressed: () => AuthenticationRepository.instance.logout(),
     );
   }
 
   /// Status page successfully create an account.
   /// Pressing continue button will be directing user to login screen.
-  static TStatusPage signupSuccess() {
+  static TStatusPage signupSuccess({ required VoidCallback onPrimaryPressed}) {
     return TStatusPage(
       animationPath: TImages.successCheck,
       title: TTexts.signupSuccessTitle,
       subtitle: TTexts.signUpSuccessSubtitle,
       appBarButtonVisibility: false,
       primaryButtonText: TTexts.continueButton,
-      onPrimaryPressed: () => Get.offAll(() => LoginScreen()),
+      onPrimaryPressed: onPrimaryPressed,
     );
   }
 

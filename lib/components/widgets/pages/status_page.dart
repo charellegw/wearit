@@ -18,6 +18,7 @@ class TStatusPage extends StatelessWidget {
     this.highlightText,
     this.secondaryButtonText,
     this.onSecondaryPressed,
+    this.onCrossButtonPressed,
   });
 
   final String? imagePath, animationPath;
@@ -25,7 +26,7 @@ class TStatusPage extends StatelessWidget {
   final bool appBarButtonVisibility;
   final VoidCallback onPrimaryPressed;
   final String? secondaryButtonText, highlightText;
-  final VoidCallback? onSecondaryPressed;
+  final VoidCallback? onSecondaryPressed, onCrossButtonPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +38,7 @@ class TStatusPage extends StatelessWidget {
         actions: [
           if (appBarButtonVisibility == true) ...[
             IconButton(
-                onPressed: () => Get.back(),
+                onPressed: onCrossButtonPressed ?? () => Get.back(),
                 icon: Icon(Icons.close_rounded)),
           ]
         ],

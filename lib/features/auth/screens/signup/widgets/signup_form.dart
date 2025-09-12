@@ -24,7 +24,7 @@ class SignupForm extends StatelessWidget {
         children: [
           TextFormField(
             controller: controller.name,
-            validator: (value) => TValidator.validateName(value),
+            validator: (value) => TValidator.validateEmptyField('Name', value),
             decoration: const InputDecoration(
               labelText: TTexts.name,
             ),
@@ -67,13 +67,13 @@ class SignupForm extends StatelessWidget {
             () => TextFormField(
               controller: controller.password,
               validator: (value) => TValidator.validatePassword(value),
-              obscureText: controller.showPassword.value,
+              obscureText: controller.hidePassword.value,
               selectionHeightStyle: BoxHeightStyle.tight,
               decoration: InputDecoration(
                 labelText: TTexts.password,
                 suffixIcon: IconButton(
-                  onPressed: () => controller.showPassword.value = !controller.showPassword.value,
-                  icon: Icon(controller.showPassword.value ? Icons.visibility : Icons.visibility_off, size: TSizes.iconXs,),
+                  onPressed: () => controller.hidePassword.value = !controller.hidePassword.value,
+                  icon: Icon(controller.hidePassword.value ? Icons.visibility : Icons.visibility_off, size: TSizes.iconXs,),
                 ),
               ),
             ),
@@ -85,13 +85,13 @@ class SignupForm extends StatelessWidget {
             () => TextFormField(
               controller: controller.confirmPassword,
               validator: (value) => TValidator.validateConfirmPassword(value, controller.password.text),
-              obscureText: controller.showPassword.value,
+              obscureText: controller.hidePassword.value,
               selectionHeightStyle: BoxHeightStyle.tight,
               decoration: InputDecoration(
                 labelText: TTexts.confirmPassword,
                 suffixIcon: IconButton(
-                  onPressed: () => controller.showPassword.value = !controller.showPassword.value,
-                  icon: Icon(controller.showPassword.value ? Icons.visibility : Icons.visibility_off, size: TSizes.iconXs,),
+                  onPressed: () => controller.hidePassword.value = !controller.hidePassword.value,
+                  icon: Icon(controller.hidePassword.value ? Icons.visibility : Icons.visibility_off, size: TSizes.iconXs,),
                 ),
               ),
             ),

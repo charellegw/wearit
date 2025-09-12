@@ -18,7 +18,7 @@ class SignupController extends GetxController {
   final phoneNumber = TextEditingController();
   final password = TextEditingController();
   final confirmPassword = TextEditingController();
-  final showPassword = false.obs;
+  final hidePassword = true.obs;
   final privacyPolicy = false.obs;
   GlobalKey<FormState> signupFormKey = GlobalKey<FormState>();
 
@@ -57,12 +57,18 @@ class SignupController extends GetxController {
         return;
       }
 
+      print("tess");
+
       // Register user in Firebase Auth
       final userCredential = await AuthenticationRepository.instance
         .registerWithEmailAndPassword(
           email.text.trim(), 
           password.text.trim()
       );
+
+      if (userCredential.user == null) {
+  throw 'UserCredential.user is null, signup failed!';
+}
 
       final newUser = UserModel(
         id: userCredential.user!.uid, 
@@ -78,10 +84,12 @@ class SignupController extends GetxController {
       
       // Success response
       TFullScreenLoader.stopLoading();
-
       TLoaders.successSnackBar(title: 'Congratulations!', message: 'Your account has been successfully created! Verify your email to continue.');
 
-      Get.to(() => StatusPages.verifyEmail(email: newUser.email, onContinue: (){}));
+      // Redirect
+      Get.to(() => StatusPages.verifyEmail(
+        email: newUser.email, 
+      ));
 
     } catch (e) {
       // Stop loader

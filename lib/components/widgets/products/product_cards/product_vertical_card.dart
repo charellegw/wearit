@@ -44,7 +44,7 @@ class TProductVerticalCard extends StatelessWidget {
                         width: 190,
                         height: 190,
                         imagePath: TImages.product1,
-                        fit: BoxFit.contain,
+                        fit: BoxFit.cover,
                         borderRadius: TSizes.cardRadius,
                         // border: Border.all(color: darkMode ? TColors.borderSecondary : Colors.white, width: 1),
                       ),

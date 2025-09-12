@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:wearit/components/widgets/app_bar/app_bar.dart';
 import 'package:wearit/components/widgets/headers/section_header.dart';
-import 'package:wearit/components/widgets/images/circular_image.dart';
 import 'package:wearit/features/personalization/screens/profile/widgets/profile_menu.dart';
 import 'package:wearit/utils/constants/colors.dart';
 import 'package:wearit/utils/constants/images_string.dart';
@@ -27,7 +26,10 @@ class ProfileScreen extends StatelessWidget {
                 width: double.infinity,
                 child: Column(
                   children: [
-                    TCircularImage(imagePath: TImages.iAvatarGirl,),
+                    CircleAvatar(
+                      radius: 25,
+                      backgroundImage: AssetImage(TImages.profilePicture),
+                    ),
                     const SizedBox(height: TSizes.defaultGap,),
                     TextButton(onPressed: () {}, child: Text('Change Profile Picture'))
                   ],

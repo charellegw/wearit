@@ -2,13 +2,14 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:wearit/features/auth/controllers/login/login_controller.dart';
 import 'package:wearit/features/auth/screens/password_configuration/forgot_password.dart';
 import 'package:wearit/features/auth/screens/signup/signup.dart';
-import 'package:wearit/navigation_menu.dart';
 import 'package:wearit/utils/constants/colors.dart';
 import 'package:wearit/utils/constants/sizes.dart';
 import 'package:wearit/utils/constants/text_string.dart';
 import 'package:wearit/utils/helpers/helper.dart';
+import 'package:wearit/utils/validators/validator.dart';
 
 class LoginForm extends StatelessWidget {
   const LoginForm({
@@ -18,11 +19,17 @@ class LoginForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final darkMode = THelper.isDarkMode(context);
+    final controller = Get.put(LoginController());
+
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: TSizes.bigSectionGap),
-      child: Form(child: Column(
+      child: Form(
+        key: controller.loginFormKey,
+        child: Column(
         children: [
           TextFormField(
+            controller: controller.email,
+            validator: (value) => TValidator.validateEmail(value),
             decoration: const InputDecoration(
               labelText: TTexts.email,
             ),
@@ -30,11 +37,19 @@ class LoginForm extends StatelessWidget {
       
           const SizedBox(height: TSizes.textFieldGap,),
           
-          TextFormField(
-            selectionHeightStyle: BoxHeightStyle.tight,
-            decoration: const InputDecoration(
-              labelText: TTexts.password,
-              suffixIcon: Icon(Icons.visibility, size: TSizes.iconXs,),
+          Obx(
+            () => TextFormField(
+              controller: controller.password,
+              validator: (value) => TValidator.validateEmptyField('Password', value),
+              obscureText: controller.showPassword.value,
+              selectionHeightStyle: BoxHeightStyle.tight,
+              decoration: InputDecoration(
+                labelText: TTexts.password,
+                suffixIcon: IconButton(
+                  onPressed: () => controller.showPassword.value = !controller.showPassword.value,
+                  icon: Icon(controller.showPassword.value ? Icons.visibility : Icons.visibility_off, size: TSizes.iconXs,),
+                ),
+              ),
             ),
           ),
       
@@ -50,9 +65,11 @@ class LoginForm extends StatelessWidget {
                   SizedBox(
                     height: 20,
                     width: 20,
-                    child: Checkbox(
-                      value: false,
-                      onChanged: (value) {},
+                    child: Obx(
+                      () => Checkbox(
+                        value: controller.rememberMe.value,
+                        onChanged: (value) => controller.rememberMe.value = !controller.rememberMe.value,
+                      ),
                     )
                   ),
 
@@ -88,7 +105,7 @@ class LoginForm extends StatelessWidget {
                 width: double.infinity,
                 height: TSizes.buttonHeight,
                 child: ElevatedButton(
-                  onPressed: () => Get.to(() => NavigationMenu()), 
+                  onPressed: () => controller.emailandPasswordLogin(), 
                   child: Text(TTexts.loginButton, style: Theme.of(context).textTheme.bodyLarge?.copyWith(color: Colors.white),),
                 ),
               ),

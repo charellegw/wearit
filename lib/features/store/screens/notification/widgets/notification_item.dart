@@ -27,7 +27,7 @@ class TNotificationItem extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Expanded(child: Text('Order Complete ejrnfek ferifje erferj i jrf fesjoif  roeef', style: Theme.of(context).textTheme.bodyMedium,)),
+              Expanded(child: Text('Order Complete', style: Theme.of(context).textTheme.bodyMedium,)),
               if (showCheckBox) ...[
                 const SizedBox(width: TSizes.defaultGap,),
                 SizedBox(

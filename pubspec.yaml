@@ -68,6 +68,7 @@ flutter:
     - assets/images/banner/
     - assets/images/products/
     - assets/images/animations/
+    - assets/images/user/
     - assets/logos/logo_blue.png
 
   #--Local Fonts--#
