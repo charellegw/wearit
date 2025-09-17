@@ -17,7 +17,7 @@ class TButtonBadge extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(TSizes.sm),
         decoration: BoxDecoration(
-          color: TColors.errorRed,
+          color: Colors.red,
           borderRadius: BorderRadius.circular(TSizes.md),
         ),
         constraints: const BoxConstraints(

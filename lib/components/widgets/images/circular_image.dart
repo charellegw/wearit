@@ -36,6 +36,7 @@ class TCircularImage extends StatelessWidget {
       ),
       child: Image(
         image: AssetImage(imagePath),
+        fit: fit,
         color: overlayColor ?? (darkMode ? TColors.containerLight : TColors.backgroundDark),
       ),
     );

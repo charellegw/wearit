@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:wearit/components/widgets/headers/section_header.dart';
 import 'package:wearit/components/widgets/listview/category_item.dart';
+import 'package:wearit/features/store/screens/sub_category/sub_category.dart';
 import 'package:wearit/utils/constants/images_string.dart';
 import 'package:wearit/utils/constants/sizes.dart';
 import 'package:wearit/utils/helpers/helper.dart';
@@ -35,7 +37,7 @@ class THomeCategories extends StatelessWidget {
                 return TCategoryItem(
                   image: TImages.iBags,
                   title: 'Bag',
-                  onTap: () {},
+                  onTap: () => Get.to(() => const SubCategoryScreen()),
                 );
               },
             ),

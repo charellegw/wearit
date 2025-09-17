@@ -15,12 +15,16 @@ class TIconButton extends StatelessWidget {
     this.iconSize = TSizes.iconSm,
     this.padding,
     this.onPressed,
+    this.borderColor,
+    this.borderVisibility = false,
+    this.shadowVisibility = false,
   });
 
   final IconData icon;
   final double width, height, radius, iconSize;
-  final Color? backgroundColor, iconColor;
+  final Color? backgroundColor, iconColor, borderColor;
   final EdgeInsetsGeometry? padding;
+  final bool borderVisibility, shadowVisibility;
   final void Function()? onPressed;
 
   @override
@@ -33,7 +37,9 @@ class TIconButton extends StatelessWidget {
       padding: padding,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(radius),
-        color: backgroundColor ?? (darkMode ? TColors.backgroundDark : TColors.buttonSecondary),
+        border: borderVisibility ? Border.all(color: borderColor ?? (darkMode ? TColors.borderSecondary : TColors.containerLight)) : null,
+        color: backgroundColor ?? (darkMode ? TColors.backgroundDark : TColors.containerLight),
+        boxShadow: shadowVisibility ? [BoxShadow(color: Colors.black.withAlpha(30), offset: Offset(-3, 3), blurRadius: 3)] : null,
       ),
       child: IconButton(
         onPressed: onPressed,

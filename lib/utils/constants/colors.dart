@@ -25,7 +25,6 @@ class TColors {
   static const Color buttonPrimary = primaryColor;
   static const Color buttonSecondary = Colors.white;
   static const Color buttonSecondaryDark = Color(0XFFA1AAB2);
-  // static const Color buttonDisabled = Color();
 
   // Border Line
   static const Color borderPrimary = primaryColor;

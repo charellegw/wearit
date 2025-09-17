@@ -6,8 +6,8 @@ class TImages {
 
   // Promotion Banner Slider
   static const String banner1 = "assets/images/banner/new_arrival.png";
-  static const String banner2 = "assets/images/banner/banner_2.png";
-  static const String banner3 = "assets/images/banner/banner_3.png";
+  static const String banner2 = "assets/images/banner/3.png";
+  static const String banner3 = "assets/images/banner/4.png";
 
   // Onboarding
   static const String onboarding1 = "assets/images/onboarding/online_shopping_1.png";
@@ -22,9 +22,6 @@ class TImages {
   static const String docerAnimation = "assets/images/animations/141594-animation-of-docer.json";
   static const String mailbox = "assets/images/animations/Mailbox.json";
   static const String successCheck = "assets/images/animations/success-check-fill-FPiuzFU9Hy.json";
-
-  // Icons: Avatar
-  static const String iAvatarGirl = "assets/icons/avatar/avatar.png";
   
   // Icons: Social Media
   static const String iGoogle = "assets/icons/auth/google.png";
@@ -41,7 +38,7 @@ class TImages {
   static const String iAccs = "assets/icons/category/accessories.png";
 
   // Icons: Profile
-  static const String profilePicture = "";
+  static const String profilePicture = "assets/images/user/pfp.png";
 
   // Icons: Payment Methods
   static const String iMastercard = "assets/icons/payment_methods/Mastercard_Logo.png";
@@ -54,6 +51,6 @@ class TImages {
   static const String iZara = "";
 
   // Image: Products
-  static const String product1 = "assets/images/products/product_1.png";
+  static const String product1 = "assets/images/products/product_1.jpg";
 
 }

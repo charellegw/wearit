@@ -1,4 +1,6 @@
+import 'package:get/get.dart';
 import 'package:wearit/components/widgets/buttons/icon_button_with_badge.dart';
+import 'package:wearit/features/store/screens/notification/notification.dart';
 import 'package:wearit/utils/constants/text_string.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:wearit/components/widgets/app_bar/app_bar.dart';
@@ -37,6 +39,7 @@ class THomeAppBar extends StatelessWidget {
         TIconButtonWithBadge(
           icon: Iconsax.notification,
           badgeText: '99',
+          onPressed: () => Get.to(() => const NotificationScreen()),
         ),
       ],
     );

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:wearit/components/widgets/images/circular_image.dart';
 import 'package:wearit/utils/constants/colors.dart';
 import 'package:wearit/utils/constants/images_string.dart';
 import 'package:wearit/utils/helpers/helper.dart';
@@ -16,9 +15,9 @@ class TUserProfileTile extends StatelessWidget {
   Widget build(BuildContext context) {
     final darkMode = THelper.isDarkMode(context);
     return ListTile(
-      leading: TCircularImage(
-        imagePath: TImages.profilePicture,
-        padding: 0,
+      leading: CircleAvatar(
+        radius: 25,
+        backgroundImage: AssetImage(TImages.profilePicture),
       ),
       title: Text(
         'Charelle Winarto',

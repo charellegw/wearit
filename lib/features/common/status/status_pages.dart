@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:wearit/components/widgets/pages/status_page.dart';
+import 'package:wearit/data/repositories/authentication/authentication_repository.dart';
+import 'package:wearit/features/auth/controllers/signup/verify_email_controller.dart';
 import 'package:wearit/features/auth/screens/login/login.dart';
 import 'package:wearit/navigation_menu.dart';
 import 'package:wearit/utils/constants/images_string.dart';
@@ -17,32 +19,32 @@ class StatusPages {
   ///   - onResend: Callback when user clicks the "Resend Email" button.
   static TStatusPage verifyEmail({
     required String email,
-    required VoidCallback onContinue,
-    VoidCallback? onResend,
+    VoidCallback? onContinue,
   }) {
     return TStatusPage(
-      imagePath: TImages.mailbox,
+      animationPath: TImages.mailbox,
       title: TTexts.verifyEmailTitle,
       subtitle: TTexts.verifyEmailSubtitle,
       appBarButtonVisibility: true,
       primaryButtonText: TTexts.continueButton,
-      onPrimaryPressed: onContinue, 
+      onPrimaryPressed: onContinue ?? () => Get.put(VerifyEmailController()).checkEmailVerifiedStatus(), 
       secondaryButtonText: TTexts.resendEmailButton,
-      onSecondaryPressed: onResend ?? () {},
+      onSecondaryPressed: () => Get.put(VerifyEmailController()).sendEmailVerification(),
       highlightText: email,
+      onCrossButtonPressed: () => AuthenticationRepository.instance.logout(),
     );
   }
 
   /// Status page successfully create an account.
   /// Pressing continue button will be directing user to login screen.
-  static TStatusPage signupSuccess() {
+  static TStatusPage signupSuccess({ required VoidCallback onPrimaryPressed}) {
     return TStatusPage(
-      imagePath: TImages.successCheck,
+      animationPath: TImages.successCheck,
       title: TTexts.signupSuccessTitle,
       subtitle: TTexts.signUpSuccessSubtitle,
       appBarButtonVisibility: false,
       primaryButtonText: TTexts.continueButton,
-      onPrimaryPressed: () => Get.offAll(() => LoginScreen()),
+      onPrimaryPressed: onPrimaryPressed,
     );
   }
 
@@ -57,7 +59,7 @@ class StatusPages {
     VoidCallback? onResend,
   }) {
     return TStatusPage(
-      imagePath: TImages.mailbox,
+      animationPath: TImages.mailbox,
       title: TTexts.passwordResetEmailTitle,
       subtitle: TTexts.passwordResetEmailSubtitle,
       appBarButtonVisibility: false,
@@ -73,11 +75,11 @@ class StatusPages {
   /// Pressing continue button will be directing user to navigation menu.
   static TStatusPage orderSuccess() {
     return TStatusPage(
-      imagePath: TImages.successCheck,
+      animationPath: TImages.successCheck,
       title: TTexts.orderSuccessTitle,
       subtitle: TTexts.orderSuccessSubtitle,
       appBarButtonVisibility: false,
-      primaryButtonText: TTexts.continueButton,
+      primaryButtonText: 'Continue Shopping',
       onPrimaryPressed: () => Get.offAll(() => const NavigationMenu()),
     );
   }

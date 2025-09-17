@@ -5,6 +5,8 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:wearit/features/auth/screens/login/login.dart';
 import 'package:wearit/features/auth/screens/onboarding/onboarding.dart';
+import 'package:wearit/features/common/status/status_pages.dart';
+import 'package:wearit/navigation_menu.dart';
 import 'package:wearit/utils/exceptions/firebase_auth_exception.dart';
 import 'package:wearit/utils/exceptions/format_exception.dart';
 import 'package:wearit/utils/exceptions/platform_exception.dart';
@@ -21,18 +23,102 @@ class AuthenticationRepository extends GetxController {
     screenRedirect();
   }
 
+  /// If user is opening the app for the first time, 
+  /// Then, redirect user to Onboarding Screen
+  /// Else, redirect user to Login Screen
   screenRedirect() async {
-    deviceStorage.writeIfNull('isFirstOpen', true);
-    deviceStorage.read('isFirstOpen') != true
-        ? Get.offAll(() => const LoginScreen())
-        : Get.offAll(const OnboardingScreen());
+    final user = _auth.currentUser;
+
+    if(user != null) {
+      /// Debugging: will be deleted soon
+      Get.offAll(() => const NavigationMenu());
+
+
+      // If user email is verified, 
+      // if(user.emailVerified) {
+      //   Get.offAll(() => const NavigationMenu());
+      // } else {
+      //   Get.offAll(() => StatusPages.verifyEmail(
+      //       email: user.email.toString(),
+      //       onContinue: () { Get.offAll(() => const LoginScreen()); },
+      //   ));
+      // }
+    } else {
+      deviceStorage.writeIfNull('isFirstOpen', true);
+      deviceStorage.read('isFirstOpen') != true
+          ? Get.offAll(() => const LoginScreen())
+          : Get.offAll(const OnboardingScreen());
+    }
+
   }
 
   /*---------------- Email & Password Login ---------------*/
 
+  Future<UserCredential> loginWithEmailAndPassword(String email, String password) async {
+    try {
+      return await _auth.signInWithEmailAndPassword(email: email, password: password);
+    } on FirebaseAuthException catch (e) {
+      throw TFirebaseAuthException(e.code).message;
+    } on FirebaseException catch (e) {
+      throw TFirebaseAuthException(e.code).message;
+    } on FormatException catch (_) {
+      throw const TFormatException();
+    } on PlatformException catch (e) {
+      throw TPlatformException(e.code).message;
+    } catch (e) {
+      throw 'Something went wrong. Please try again.';
+    }
+  }
+
+  /*---------------- Email & Password Sign Up ---------------*/
+
   Future<UserCredential> registerWithEmailAndPassword(String email, String password) async {
+    // try {
+    //   return await _auth.createUserWithEmailAndPassword(email: email, password: password);
+    // } on FirebaseAuthException catch (e) {
+    //   throw TFirebaseAuthException(e.code).message;
+    // } on FirebaseException catch (e) {
+    //   throw TFirebaseAuthException(e.code).message;
+    // } on FormatException catch (_) {
+    //   throw const TFormatException();
+    // } on PlatformException catch (e) {
+    //   throw TPlatformException(e.code).message;
+    // } catch (e) {
+    //   throw 'Something went wrong. Please try again. 2';
+    // }
+
     try {
       return await _auth.createUserWithEmailAndPassword(email: email, password: password);
+    } catch (e, s) {
+      print("🔥 ERROR at registerWithEmailAndPassword: $e");
+      print("🔥 STACKTRACE: $s");
+      throw 'Something went wrong. Please try again. 2';
+    }
+  }
+
+  /*---------------- Verify Email After Sign Up ---------------*/
+
+  Future<void> sendEmailVerification() async {
+    try {
+      await _auth.currentUser?.sendEmailVerification();
+    } on FirebaseAuthException catch (e) {
+      throw TFirebaseAuthException(e.code).message;
+    } on FirebaseException catch (e) {
+      throw TFirebaseAuthException(e.code).message;
+    } on FormatException catch (_) {
+      throw const TFormatException();
+    } on PlatformException catch (e) {
+      throw TPlatformException(e.code).message;
+    } catch (e) {
+      throw 'Something went wrong. Please try again.';
+    }
+  }
+
+  /*---------------- Logout ---------------*/
+
+  Future<void> logout() async {
+    try {
+      await _auth.signOut();
     } on FirebaseAuthException catch (e) {
       throw TFirebaseAuthException(e.code).message;
     } on FirebaseException catch (e) {

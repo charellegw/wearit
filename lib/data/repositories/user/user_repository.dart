@@ -21,8 +21,9 @@ class UserRepository extends GetxController {
       throw const TFormatException();
     } on PlatformException catch (e) {
       throw TPlatformException(e.code).message;
-    } catch (e) {
-      throw 'Something went wrong. Please try again.';
+    } catch (e, s) {
+      print('Unexpected error saving user: $e\n$s');
+      throw 'Something went wrong. Please try again. 1';
     }
   }
 

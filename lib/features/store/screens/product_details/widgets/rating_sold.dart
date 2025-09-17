@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:wearit/utils/constants/colors.dart';
 import 'package:wearit/utils/constants/sizes.dart';
 
-class TRatingAndShare extends StatelessWidget {
-  const TRatingAndShare({
+class TRatingAndSold extends StatelessWidget {
+  const TRatingAndSold({
     super.key,
   });
 
@@ -28,8 +28,17 @@ class TRatingAndShare extends StatelessWidget {
             )
           ],
         ),
-    
-        IconButton(onPressed: (){}, icon: Icon(Icons.share), iconSize: TSizes.iconSm,)
+
+        Text.rich(
+          TextSpan(children: [
+            TextSpan(
+                text: 'Sold ',
+                style: Theme.of(context).textTheme.bodySmall
+
+            ),
+            TextSpan(text: '32,943', style: Theme.of(context).textTheme.bodySmall),
+          ]),
+        )
       ],
     );
   }

@@ -1,7 +1,7 @@
 class TValidator {
-  static String? validateName(String? value) {
+  static String? validateEmptyField(String? fieldName, String? value) {
     if (value == null || value.isEmpty){
-      return 'Name is required.';
+      return '$fieldName is required.';
     }
 
     return null;

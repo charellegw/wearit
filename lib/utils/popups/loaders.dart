@@ -4,7 +4,7 @@ import 'package:iconsax/iconsax.dart';
 import 'package:wearit/utils/constants/colors.dart';
 
 class TLoaders {
-  static successSnackBar({required title, message = '', duration = 3}) {
+  static successSnackBar({required title, message = '', duration = 3, }) {
     Get.snackbar(
       title,
       message,

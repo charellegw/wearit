@@ -11,13 +11,16 @@ class TIconButtonWithBadge extends StatelessWidget {
     this.iconColor, 
     this.padding, 
     this.onPressed,
+    this.borderColor,
+    this.borderVisibility = false,
+    this.shadowVisibility = false,
   });
 
   final IconData icon;
-  final Color? backgroundColor, iconColor;
+  final Color? backgroundColor, iconColor, borderColor;
   final EdgeInsetsGeometry? padding;
   final void Function()? onPressed;
-
+  final bool borderVisibility, shadowVisibility;
   final String? badgeText;
 
   @override
@@ -31,6 +34,9 @@ class TIconButtonWithBadge extends StatelessWidget {
           padding: padding,
           backgroundColor: backgroundColor,
           iconColor: iconColor,
+          borderVisibility: borderVisibility,
+          shadowVisibility: shadowVisibility,
+          borderColor: borderColor,
         ),
         if (badgeText != null)
           TButtonBadge(

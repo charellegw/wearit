@@ -27,7 +27,9 @@ class TPriceProduct extends StatelessWidget {
       style: isDiscountPrice
           ? Theme.of(context).textTheme.labelLarge!.copyWith(
               color: TColors.textSecondary,
-              decoration: TextDecoration.lineThrough)
+              decoration: TextDecoration.lineThrough,
+              fontSize: textSize,
+            )
           : Theme.of(context).textTheme.headlineSmall!.copyWith(
               color: textColor,
               fontSize: textSize,

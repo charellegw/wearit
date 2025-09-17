@@ -4,7 +4,7 @@ import 'package:wearit/components/styles/spacing_style.dart';
 import 'package:wearit/components/widgets/app_bar/app_bar.dart';
 import 'package:wearit/components/widgets/containers/rounded_container.dart';
 import 'package:wearit/features/common/status/status_pages.dart';
-import 'package:wearit/features/store/screens/cart/widgets/cart_items.dart';
+import 'package:wearit/features/store/screens/cart/widgets/cart_list.dart';
 import 'package:wearit/features/store/screens/checkout/widgets/address_details.dart';
 import 'package:wearit/features/store/screens/checkout/widgets/billing_details.dart';
 import 'package:wearit/features/store/screens/checkout/widgets/payment_method.dart';
@@ -27,7 +27,7 @@ class CheckoutScreen extends StatelessWidget {
           padding: TSpacingStyle.paddingDefault,
           child: Column(
             children: [
-              TCartItems(showQuantityButtons: false,),
+              TCartList(showQuantityButtons: false, showQuantityLabel: true,),
               const SizedBox(height: TSizes.sectionGap,),
               
               TVoucherInput(),
