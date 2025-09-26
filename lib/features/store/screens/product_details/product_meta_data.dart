@@ -38,7 +38,6 @@ class TProductMetaData extends StatelessWidget {
               height: 60,
               width: 60,
               borderRadius: TSizes.radiusSm,
-              padding: EdgeInsets.all(TSizes.md),
               backgroundColor: THelper.isDarkMode(context)
                   ? TColors.containerDark
                   : TColors.containerLight,

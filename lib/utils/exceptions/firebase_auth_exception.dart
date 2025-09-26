@@ -26,11 +26,11 @@ class TFirebaseAuthException implements Exception {
     'weak-password':
         'The password is too weak. Please choose a stronger password.',
     'wrong-password':
-        'Incorrect password. Please check your password and try again.',
+        'Invalid email or password.',
     'invalid-credential':
-        'The supplied credential is malformed or has expired.',
+        'Invalid email or password.',
     'INVALID_LOGIN_CREDENTIALS':
-        'Invalid login credentials.',
+        'Invalid email or password.',
 
     // ---------------- ACTION CODE (RESET / VERIFY EMAIL) ----------------
     'expired-action-code':

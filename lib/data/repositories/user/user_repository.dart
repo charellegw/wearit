@@ -14,7 +14,7 @@ class UserRepository extends GetxController {
   /// Save user's data into Firestore
   Future<void> saveUserRecord(UserModel user) async {
     try {
-      await _db.collection("Users").doc(user.id).set(user.toJson());
+      await _db.collection("users").doc(user.id).set(user.toJson());
     } on FirebaseException catch (e) {
       throw TFirebaseException(e.code).message;
     } on FormatException catch (_) {
@@ -22,8 +22,7 @@ class UserRepository extends GetxController {
     } on PlatformException catch (e) {
       throw TPlatformException(e.code).message;
     } catch (e, s) {
-      print('Unexpected error saving user: $e\n$s');
-      throw 'Something went wrong. Please try again. 1';
+      throw 'Something went wrong. Please try again.';
     }
   }
 
@@ -32,7 +31,7 @@ class UserRepository extends GetxController {
   /// Return type: (Boolean) : 'true' if username is available, otherwise 'false'.
   Future<bool> isUsernameAvailable(String username) async {
     final snapshot = await _db
-        .collection('Users')
+        .collection('users')
         .where('username', isEqualTo: username.trim())
         .get();
 

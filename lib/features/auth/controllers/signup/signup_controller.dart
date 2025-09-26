@@ -57,18 +57,16 @@ class SignupController extends GetxController {
         return;
       }
 
-      print("tess");
-
       // Register user in Firebase Auth
       final userCredential = await AuthenticationRepository.instance
         .registerWithEmailAndPassword(
           email.text.trim(), 
-          password.text.trim()
+          password.text.trim(),
       );
 
       if (userCredential.user == null) {
-  throw 'UserCredential.user is null, signup failed!';
-}
+        throw 'UserCredential.user is null, signup failed!';
+      }
 
       final newUser = UserModel(
         id: userCredential.user!.uid, 
@@ -85,6 +83,9 @@ class SignupController extends GetxController {
       // Success response
       TFullScreenLoader.stopLoading();
       TLoaders.successSnackBar(title: 'Congratulations!', message: 'Your account has been successfully created! Verify your email to continue.');
+
+      // Send email verification
+      await AuthenticationRepository.instance.sendEmailVerification();
 
       // Redirect
       Get.to(() => StatusPages.verifyEmail(
