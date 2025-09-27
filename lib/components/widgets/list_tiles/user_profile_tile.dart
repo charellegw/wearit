@@ -5,7 +5,7 @@ import 'package:wearit/utils/constants/colors.dart';
 import 'package:wearit/utils/constants/images_string.dart';
 import 'package:wearit/features/personalization/controllers/user_controller.dart';
 import 'package:wearit/utils/helpers/helper.dart';
-import 'package:wearit/utils/popups/shimmer.dart';
+import 'package:wearit/components/widgets/shimmers/shimmer.dart';
 
 class TUserProfileTile extends StatelessWidget {
   const TUserProfileTile({

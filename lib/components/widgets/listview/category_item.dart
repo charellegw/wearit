@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'package:wearit/utils/constants/colors.dart';
+import 'package:wearit/components/widgets/images/circular_image.dart';
 import 'package:wearit/utils/constants/sizes.dart';
 import 'package:wearit/utils/helpers/helper.dart';
 
@@ -11,13 +11,15 @@ class TCategoryItem extends StatelessWidget {
     required this.title,
     this.titleColor,
     this.backgroundColor,
-    this.onTap,
+    this.onTap, 
+    this.isNetworkImage = true,
   });
 
   final String image, title;
   final Color? titleColor;
   final Color? backgroundColor;
   final void Function()? onTap;
+  final bool isNetworkImage;
 
   @override
   Widget build(BuildContext context) {
@@ -28,21 +30,13 @@ class TCategoryItem extends StatelessWidget {
         padding: const EdgeInsets.only(right: TSizes.defaultGap),
         child: Column(
           children: [
-            Container(
-              width: 60,
-              height: 60,
-              padding: const EdgeInsets.all(TSizes.iconPadding),
-              decoration: BoxDecoration(
-                color: backgroundColor ?? (darkMode ? TColors.backgroundDark : Colors.white),
-                borderRadius: BorderRadius.circular(100),
-              ),
-              child: Center(
-                child: Image(
-                  image: AssetImage(image),
-                  fit: BoxFit.cover,
-                  color: darkMode ? Colors.white : Colors.black,
-                ),
-              ),
+            TCircularImage(
+              imagePath: image,
+              fit: BoxFit.cover,
+              size: 60,
+              padding: TSizes.iconPadding,
+              backgroundColor: backgroundColor,
+              isNetworkImage: isNetworkImage,
             ),
             const SizedBox(
               height: TSizes.textGap,

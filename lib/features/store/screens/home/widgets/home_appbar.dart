@@ -7,7 +7,7 @@ import 'package:iconsax/iconsax.dart';
 import 'package:wearit/components/widgets/app_bar/app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:wearit/utils/helpers/helper.dart';
-import 'package:wearit/utils/popups/shimmer.dart';
+import 'package:wearit/components/widgets/shimmers/shimmer.dart';
 
 class THomeAppBar extends StatelessWidget {
   const THomeAppBar({
