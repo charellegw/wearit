@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:wearit/data/models/user/user_model.dart';
+import 'package:wearit/data/repositories/authentication/authentication_repository.dart';
 import 'package:wearit/utils/exceptions/firebase_exception.dart';
 import 'package:wearit/utils/exceptions/format_exception.dart';
 import 'package:wearit/utils/exceptions/platform_exception.dart';
@@ -21,7 +22,7 @@ class UserRepository extends GetxController {
       throw const TFormatException();
     } on PlatformException catch (e) {
       throw TPlatformException(e.code).message;
-    } catch (e, s) {
+    } catch (e) {
       throw 'Something went wrong. Please try again.';
     }
   }
@@ -36,5 +37,71 @@ class UserRepository extends GetxController {
         .get();
 
     return snapshot.docs.isEmpty;
+  }
+
+  Future<UserModel> fetchUserDetails() async {
+    try {
+      final documentSnapshot = await _db.collection("users").doc(AuthenticationRepository.instance.authUser?.uid).get();
+
+      if (documentSnapshot.exists) {
+        return UserModel.fromSnapshot(documentSnapshot);
+      } else {
+        return UserModel.empty();
+      }
+
+    } on FirebaseException catch (e) {
+      throw TFirebaseException(e.code).message;
+    } on FormatException catch (_) {
+      throw const TFormatException();
+    } on PlatformException catch (e) {
+      throw TPlatformException(e.code).message;
+    } catch (e) {
+      throw 'Something went wrong. Please try again.';
+    }
+  }
+
+  /// Update user data in firestore
+    Future<void> updateUserDetails(UserModel updatedUser) async {
+      try {
+        await _db.collection("users").doc(updatedUser.id).update(updatedUser.toJson());
+      } on FirebaseException catch (e) {
+        throw TFirebaseException(e.code).message;
+      } on FormatException catch (_) {
+        throw const TFormatException();
+      } on PlatformException catch (e) {
+        throw TPlatformException(e.code).message;
+      } catch (e) {
+        throw 'Something went wrong. Please try again.';
+      }
+    }
+
+  /// Update any field from specific user in firestore
+  Future<void> updateSingleField(Map<String, dynamic> json) async {
+    try {
+      await _db.collection("users").doc(AuthenticationRepository.instance.authUser?.uid).update(json);
+    } on FirebaseException catch (e) {
+      throw TFirebaseException(e.code).message;
+    } on FormatException catch (_) {
+      throw const TFormatException();
+    } on PlatformException catch (e) {
+      throw TPlatformException(e.code).message;
+    } catch (e) {
+      throw 'Something went wrong. Please try again.';
+    }
+  }
+
+  /// Remove user data from firestore
+  Future<void> removeUserRecord(String userId) async {
+    try {
+      await _db.collection("users").doc(userId).delete();
+    } on FirebaseException catch (e) {
+      throw TFirebaseException(e.code).message;
+    } on FormatException catch (_) {
+      throw const TFormatException();
+    } on PlatformException catch (e) {
+      throw TPlatformException(e.code).message;
+    } catch (e) {
+      throw 'Something went wrong. Please try again.';
+    }
   }
 }
