@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:wearit/data/models/user/user_model.dart';
 import 'package:wearit/data/repositories/user/user_repository.dart';
@@ -6,8 +7,12 @@ import 'package:wearit/utils/popups/loaders.dart';
 
 class UserController extends GetxController {
   static UserController get instance => Get.find();
-  final userRepo = Get.put(UserRepository());
+  final userRepository = Get.put(UserRepository());
+  final verifyEmail = TextEditingController();
+  final verifyPassword = TextEditingController();
   final profileLoading = false.obs;
+
+  GlobalKey<FormState> reAuthFormKey = GlobalKey<FormState>();
 
   Rx<UserModel> user = UserModel.empty().obs;
 
@@ -20,7 +25,7 @@ class UserController extends GetxController {
   Future<void> fetchUserRecord() async {
     try {
       profileLoading.value = true;
-      final user = await userRepo.fetchUserDetails();
+      final user = await userRepository.fetchUserDetails();
       this.user(user);
     } catch (e) {
       user(UserModel.empty());
@@ -46,7 +51,7 @@ class UserController extends GetxController {
         );
 
         // Save user data
-        await userRepo.saveUserRecord(user);
+        await userRepository.saveUserRecord(user);
       }
     } catch (e) {
       TLoaders.errorSnackBar(title: 'Data Not Saved!', message: "Something went wrong while saving your information. Please re-save your data in your profile.");

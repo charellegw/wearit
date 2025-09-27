@@ -95,8 +95,9 @@ class AuthenticationRepository extends GetxController {
     //   throw TFirebaseAuthException(e.code).message;
     // } on FormatException catch (_) {
     //   throw const TFormatException();
-    // } on PlatformException catch (e) {
-    //   throw TPlatformException(e.code).message;
+    } on PlatformException catch (e) {
+      throw '$e';
+      // throw TPlatformException(e.code).message;
     } catch (e) {
       if (kDebugMode) print('Something went wrong: $e');
       return null;
