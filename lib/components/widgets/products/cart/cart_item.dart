@@ -35,7 +35,6 @@ class TCartItem extends StatelessWidget {
               imagePath: imagePath,
               width: 75,
               height: 75,
-              padding: const EdgeInsets.all(TSizes.md),
               border: Border.all(width: 1, color: TColors.borderSecondary.withAlpha(120)),
               backgroundColor: THelper.isDarkMode(context)
                   ? TColors.containerDark

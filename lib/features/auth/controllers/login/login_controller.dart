@@ -47,16 +47,13 @@ class LoginController extends GetxController {
         localStorage.write('REMEMBER_ME_PASSWORD', password.text.trim());
       }
 
-      // final UserCredential = await AuthenticationRepository.instance.loginWithEmailAndPassword(email.text.trim(), password.text.trim());
+      final UserCredential = await AuthenticationRepository.instance.loginWithEmailAndPassword(email.text.trim(), password.text.trim());
 
       // Success response
       TFullScreenLoader.stopLoading();
 
-      /// Debuggin in app features. Will be deleted soon
-      Get.to(() => const NavigationMenu());
-
       // Redirect
-      // AuthenticationRepository.instance.screenRedirect(); 
+      AuthenticationRepository.instance.screenRedirect(); 
     } catch (e) {
       // Stop loader
       TFullScreenLoader.stopLoading();

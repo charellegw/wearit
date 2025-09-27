@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 import 'package:wearit/data/repositories/authentication/authentication_repository.dart';
@@ -13,7 +12,7 @@ class VerifyEmailController extends GetxController {
   @override
   void onInit() {
     sendEmailVerification();
-    // setTimerToAutoRedirect();
+    setTimerToAutoRedirect();
     super.onInit();
   }
 
@@ -27,18 +26,18 @@ class VerifyEmailController extends GetxController {
     }
   }
 
-  /// A timer to auto-redirecting user to relevant page.
-  // setTimerToAutoRedirect() {
-  //   Timer.periodic(const Duration(seconds: 1), (timer) async {
-  //     FirebaseAuth.instance.currentUser?.reload();
-  //     final user = FirebaseAuth.instance.currentUser;
-  //     if(user?.emailVerified ?? false) {
-  //       timer.cancel();
-  //       Get.off( () => StatusPages.signupSuccess(
-  //         onPrimaryPressed: () => AuthenticationRepository.instance.screenRedirect()));
-  //     }
-  //   });
-  // }
+  // / A timer to auto-redirecting user to relevant page.
+  setTimerToAutoRedirect() {
+    Timer.periodic(const Duration(seconds: 1), (timer) async {
+      FirebaseAuth.instance.currentUser?.reload();
+      final user = FirebaseAuth.instance.currentUser;
+      if(user?.emailVerified ?? false) {
+        timer.cancel();
+        Get.off( () => StatusPages.signupSuccess(
+          onPrimaryPressed: () => AuthenticationRepository.instance.screenRedirect()));
+      }
+    });
+  }
 
   /// Checking if email is verified
   checkEmailVerifiedStatus() async {
@@ -47,6 +46,8 @@ class VerifyEmailController extends GetxController {
       Get.off( () => StatusPages.signupSuccess( 
         onPrimaryPressed: () => AuthenticationRepository.instance.screenRedirect()
       ));
+    } else {
+      TLoaders.errorSnackBar(title: 'Oh no!', message: "Your email not verified yet! Please verify your email to continue.");
     }
   }
 }

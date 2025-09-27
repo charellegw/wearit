@@ -35,14 +35,14 @@ class AuthenticationRepository extends GetxController {
 
 
       // If user email is verified, 
-      // if(user.emailVerified) {
-      //   Get.offAll(() => const NavigationMenu());
-      // } else {
-      //   Get.offAll(() => StatusPages.verifyEmail(
-      //       email: user.email.toString(),
-      //       onContinue: () { Get.offAll(() => const LoginScreen()); },
-      //   ));
-      // }
+      if(user.emailVerified) {
+        Get.offAll(() => const NavigationMenu());
+      } else {
+        Get.offAll(() => StatusPages.verifyEmail(
+            email: user.email.toString(),
+            onContinue: () { Get.offAll(() => const LoginScreen()); },
+        ));
+      }
     } else {
       deviceStorage.writeIfNull('isFirstOpen', true);
       deviceStorage.read('isFirstOpen') != true
@@ -73,26 +73,18 @@ class AuthenticationRepository extends GetxController {
   /*---------------- Email & Password Sign Up ---------------*/
 
   Future<UserCredential> registerWithEmailAndPassword(String email, String password) async {
-    // try {
-    //   return await _auth.createUserWithEmailAndPassword(email: email, password: password);
-    // } on FirebaseAuthException catch (e) {
-    //   throw TFirebaseAuthException(e.code).message;
-    // } on FirebaseException catch (e) {
-    //   throw TFirebaseAuthException(e.code).message;
-    // } on FormatException catch (_) {
-    //   throw const TFormatException();
-    // } on PlatformException catch (e) {
-    //   throw TPlatformException(e.code).message;
-    // } catch (e) {
-    //   throw 'Something went wrong. Please try again. 2';
-    // }
-
     try {
       return await _auth.createUserWithEmailAndPassword(email: email, password: password);
-    } catch (e, s) {
-      print("🔥 ERROR at registerWithEmailAndPassword: $e");
-      print("🔥 STACKTRACE: $s");
-      throw 'Something went wrong. Please try again. 2';
+    } on FirebaseAuthException catch (e) {
+      throw TFirebaseAuthException(e.code).message;
+    } on FirebaseException catch (e) {
+      throw TFirebaseAuthException(e.code).message;
+    } on FormatException catch (_) {
+      throw const TFormatException();
+    } on PlatformException catch (e) {
+      throw TPlatformException(e.code).message;
+    } catch (e) {
+      throw 'Something went wrong. Please try again.';
     }
   }
 
@@ -118,7 +110,12 @@ class AuthenticationRepository extends GetxController {
 
   Future<void> logout() async {
     try {
+      // Remove firebase session
       await _auth.signOut();
+
+      // Remove remember me data
+      deviceStorage.remove('REMEMBER_ME_EMAIL');
+      deviceStorage.remove('REMEMBER_ME_PASSWORD');
     } on FirebaseAuthException catch (e) {
       throw TFirebaseAuthException(e.code).message;
     } on FirebaseException catch (e) {
