@@ -30,7 +30,7 @@ class TBrandCard extends StatelessWidget {
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Flexible(child: TCircularImage(imagePath: TImages.iNewBalance,)),
+            Flexible(child: TCircularImage(image: TImages.iNewBalance,)),
             const SizedBox( width: TSizes.defaultGap, ),
       
             Expanded(

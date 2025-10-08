@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:wearit/components/widgets/app_bar/app_bar.dart';
 import 'package:wearit/components/widgets/headers/section_header.dart';
+import 'package:wearit/components/widgets/images/circular_image.dart';
+import 'package:wearit/components/widgets/shimmers/shimmer.dart';
 import 'package:wearit/features/personalization/controllers/update_field_controller.dart';
 import 'package:wearit/features/personalization/screens/profile/widgets/update_field.dart';
 import 'package:wearit/features/personalization/screens/profile/widgets/profile_menu.dart';
@@ -34,12 +36,18 @@ class ProfileScreen extends StatelessWidget {
                 width: double.infinity,
                 child: Column(
                   children: [
-                    CircleAvatar(
-                      radius: 25,
-                      backgroundImage: AssetImage(TImages.profilePicture),
+                    Obx(
+                      () {
+                        final networkImage = controller.user.value.profilePicture;
+                        final profilePicture = networkImage.isNotEmpty ? networkImage : TImages.profilePicture; 
+                        
+                        return controller.imageUploading.value 
+                          ? const TShimmerEffect(width: 50, height: 50, radius: 50,)
+                          : TCircularImage(image: profilePicture, isNetworkImage: networkImage.isNotEmpty, size: 50, fit: BoxFit.cover, padding: 0, );
+                        }
                     ),
                     const SizedBox(height: TSizes.defaultGap,),
-                    TextButton(onPressed: () {}, child: Text('Change Profile Picture'))
+                    TextButton(onPressed: () => controller.uploadProfileImage(), child: Text('Change Profile Picture'))
                   ],
                 ),
               ),
@@ -132,4 +140,3 @@ class ProfileScreen extends StatelessWidget {
     );
   }
 }
-

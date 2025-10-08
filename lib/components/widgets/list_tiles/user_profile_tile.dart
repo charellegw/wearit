@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:wearit/components/widgets/images/circular_image.dart';
 import 'package:wearit/utils/constants/colors.dart';
 import 'package:wearit/utils/constants/images_string.dart';
 import 'package:wearit/features/personalization/controllers/user_controller.dart';
@@ -19,10 +20,17 @@ class TUserProfileTile extends StatelessWidget {
     final darkMode = THelper.isDarkMode(context);
     final controller = UserController.instance;
     return ListTile(
-      leading: CircleAvatar(
-        radius: 25,
-        backgroundImage: AssetImage(TImages.profilePicture),
+      leading: Obx(
+        () {
+          final networkImage = controller.user.value.profilePicture;
+          final profilePicture = networkImage.isNotEmpty ? networkImage : TImages.profilePicture; 
+          
+          return controller.imageUploading.value 
+            ? const TShimmerEffect(width: 50, height: 50, radius: 50,)
+            : TCircularImage(image: profilePicture, isNetworkImage: networkImage.isNotEmpty, size: 50, fit: BoxFit.cover, padding: 0, );
+          }
       ),
+      
       title: Obx(
         () { 
           if (controller.profileLoading.value) {

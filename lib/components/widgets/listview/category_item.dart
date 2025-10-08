@@ -31,7 +31,7 @@ class TCategoryItem extends StatelessWidget {
         child: Column(
           children: [
             TCircularImage(
-              imagePath: image,
+              image: image,
               fit: BoxFit.cover,
               size: 60,
               padding: TSizes.iconPadding,

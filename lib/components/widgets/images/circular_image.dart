@@ -8,7 +8,7 @@ import 'package:wearit/utils/helpers/helper.dart';
 class TCircularImage extends StatelessWidget {
   const TCircularImage({
     super.key, 
-    required this.imagePath, 
+    required this.image, 
     this.size = 50, 
     this.padding = TSizes.sm, 
     this.backgroundColor, 
@@ -17,7 +17,7 @@ class TCircularImage extends StatelessWidget {
     this.isNetworkImage = false,
   });
 
-  final String imagePath;
+  final String image;
   final double size;
   final double padding;
   final Color? backgroundColor, overlayColor;
@@ -33,24 +33,29 @@ class TCircularImage extends StatelessWidget {
       height: size,
       padding: EdgeInsets.all(padding),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(100),
+        shape: BoxShape.circle,
         color: backgroundColor ?? (darkMode ? TColors.containerDark : TColors.containerLight),
       ),
-      child: 
-      isNetworkImage 
-        ? CachedNetworkImage(
-          fit: fit,
-          color: overlayColor,
-          imageUrl: imagePath,
-          progressIndicatorBuilder: (context, url, downloadProgress) => const TShimmerEffect(width: 60, height: 60, radius: 100,),
-          errorWidget: (context, url, error) => const Icon(Icons.error),
-        )
-        : 
-        Image(
-          image: AssetImage(imagePath),
-          fit: fit,
-          color: overlayColor ?? (darkMode ? TColors.containerLight : TColors.backgroundDark),
+      clipBehavior: Clip.hardEdge,
+      child: AspectRatio(
+        aspectRatio: 1,
+        child: ClipRRect(
+          borderRadius: BorderRadiusGeometry.circular(100),
+          child: isNetworkImage 
+            ? CachedNetworkImage(
+              fit: fit,
+              color: overlayColor,
+              imageUrl: image,
+              progressIndicatorBuilder: (context, url, downloadProgress) => const TShimmerEffect(width: 60, height: 60, radius: 100,),
+              errorWidget: (context, url, error) => const Icon(Icons.error),
+            )
+            : Image(
+              image: AssetImage(image),
+              fit: fit,
+              color: overlayColor ?? (darkMode ? TColors.containerLight : TColors.backgroundDark),
+            ),
         ),
+      ),
     );
   }
 }
