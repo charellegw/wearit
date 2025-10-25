@@ -37,6 +37,7 @@ class TCategoryItem extends StatelessWidget {
               padding: TSizes.iconPadding,
               backgroundColor: backgroundColor,
               isNetworkImage: isNetworkImage,
+              radius: 0,
             ),
             const SizedBox(
               height: TSizes.textGap,

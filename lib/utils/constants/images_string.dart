@@ -31,7 +31,7 @@ class TImages {
   static const String iShirt = "assets/icons/category/shirt.png";
   static const String iPants = "assets/icons/category/pants.png";
   static const String iDress = "assets/icons/category/dress.png";
-  static const String iSuit = "assets/icons/category/suit.png";
+  static const String iSuits = "assets/icons/category/suit.png";
   static const String iOuter = "assets/icons/category/coat.png";
   static const String iBags = "assets/icons/category/handbag.png";
   static const String iShoes = "assets/icons/category/shoe.png";

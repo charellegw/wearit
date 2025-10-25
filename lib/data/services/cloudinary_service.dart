@@ -1,5 +1,8 @@
 import 'dart:convert';
+import 'dart:io';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:cloudinary_url_gen/cloudinary.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
 import 'package:image_picker/image_picker.dart';
@@ -32,13 +35,45 @@ class CloudinaryService {
           ),
         );
 
-      // var multipartFile = http.MultipartFile.fromBytes(image.name, fileBytes, filename: image.path);
-      
-      // Add file part to the request
-      // request.files.add(multipartFile);
+      // Send request and waigt for the response
+      final response = await request.send();
+      final resBody = await response.stream.bytesToString();
 
-      // request.fields['upload_preset'] = "user_profile_upload";
-      // request.fields['reseource_type'] = "image";
+      if (response.statusCode == 200) {
+        return jsonDecode(resBody);
+      } else {
+        throw ("Upload failed with status: ${response.statusCode}. $resBody.");
+      }
+    } catch (e) {
+      if (e is FirebaseException) {
+        throw 'Firebase Exception: ${e.message}';
+      } else if (e is SocketException) {
+        throw 'Network Error: ${e.message}';
+      } else if (e is PlatformException) {
+        throw 'Platform Exception: ${e.message}';
+      } else {
+        throw 'Something went wrong. Please try again.';
+      }
+    }
+  }
+  static Future<Map<String, dynamic>?> uploadCategory(Uint8List imageBytes, String categoryName, {String folder = "Category"}) async {
+    try {
+      // Create a MultipartRequst to upload file
+      final cloudName = dotenv.env['CLOUDINARY_CLOUD_NAME'];
+      final uploadPreset = dotenv.env['CLOUDINARY_CATEGORY_UPLOAD_PRESET'];
+      final url = Uri.parse("https://api.cloudinary.com/v1_1/$cloudName/image/upload");
+
+      // Create Multipart Request
+      final request = http.MultipartRequest("POST", url)
+        ..fields['upload_preset'] = uploadPreset!
+        ..fields['folder'] = folder
+        ..files.add(
+          http.MultipartFile.fromBytes(
+            'file',
+            imageBytes,
+            filename: categoryName,
+          ),
+        );
 
       // Send request and waigt for the response
       final response = await request.send();
@@ -47,11 +82,18 @@ class CloudinaryService {
       if (response.statusCode == 200) {
         return jsonDecode(resBody);
       } else {
-        print ("Upload failed with status: ${response.statusCode}. ${resBody}.");
-        return null;
+        throw ("Upload failed with status: ${response.statusCode}. $resBody.");
       }
     } catch (e) {
-      throw "Upload error: $e";
+      if (e is FirebaseException) {
+        throw 'Firebase Exception: ${e.message}';
+      } else if (e is SocketException) {
+        throw 'Network Error: ${e.message}';
+      } else if (e is PlatformException) {
+        throw 'Platform Exception: ${e.message}';
+      } else {
+        throw 'Something went wrong. Please try again. 2';
+      }
     }
   }
 }

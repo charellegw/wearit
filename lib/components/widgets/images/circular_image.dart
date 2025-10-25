@@ -15,10 +15,11 @@ class TCircularImage extends StatelessWidget {
     this.overlayColor, 
     this.fit = BoxFit.contain, 
     this.isNetworkImage = false,
+    this.radius = 100,
   });
 
   final String image;
-  final double size;
+  final double size, radius;
   final double padding;
   final Color? backgroundColor, overlayColor;
   final BoxFit fit;
@@ -40,7 +41,7 @@ class TCircularImage extends StatelessWidget {
       child: AspectRatio(
         aspectRatio: 1,
         child: ClipRRect(
-          borderRadius: BorderRadiusGeometry.circular(100),
+          borderRadius: BorderRadiusGeometry.circular(radius),
           child: isNetworkImage 
             ? CachedNetworkImage(
               fit: fit,

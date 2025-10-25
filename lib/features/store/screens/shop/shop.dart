@@ -10,6 +10,7 @@ import 'package:wearit/components/widgets/layouts/grid_layout.dart';
 import 'package:wearit/components/widgets/products/product_cards/product_vertical_card.dart';
 import 'package:wearit/components/widgets/products/products_section.dart/recommendation_section.dart';
 import 'package:wearit/components/widgets/search/search_bar.dart';
+import 'package:wearit/features/store/controllers/category_controller.dart';
 import 'package:wearit/features/store/screens/brands/brand_profile.dart';
 import 'package:wearit/features/store/screens/brands/all_brands.dart';
 import 'package:wearit/features/store/screens/cart/cart.dart';
@@ -23,9 +24,9 @@ class ShopScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final darkMode = THelper.isDarkMode(context);
-
+    final categories = CategoryController.instance.featuredCategories;
     return DefaultTabController(
-      length: 8,
+      length: categories.length,
       child: Scaffold(
         appBar: TAppBar(
           title: Text( 'Shop', style: Theme.of(context) .textTheme .headlineLarge! .copyWith(fontWeight: FontWeight.w600), ),
@@ -67,16 +68,19 @@ class ShopScreen extends StatelessWidget {
                   ),
                 ),
       
-                bottom: TTabBar(tabs: [
-                  Tab(child: Text('All', style: TextStyle(fontSize: 12)),),
-                  Tab(child: Text('Shirts', style: TextStyle(fontSize: 12)),),
-                  Tab(child: Text('Outers', style: TextStyle(fontSize: 12)),),
-                  Tab(child: Text('Pants', style: TextStyle(fontSize: 12)),),
-                  Tab(child: Text('Dress', style: TextStyle(fontSize: 12)),),
-                  Tab(child: Text('Bags', style: TextStyle(fontSize: 12)),),
-                  Tab(child: Text('Shoes', style: TextStyle(fontSize: 12)),),
-                  Tab(child: Text('Accessories', style: TextStyle(fontSize: 12)),),
-                ],),
+                bottom: TTabBar(tabs: 
+                  categories.map((category) => Tab(child: Text(category.name, style: TextStyle(fontSize: 12)))).toList(),
+                // [
+                //   Tab(child: Text('All', style: TextStyle(fontSize: 12)),),
+                //   Tab(child: Text('Shirts', style: TextStyle(fontSize: 12)),),
+                //   Tab(child: Text('Outers', style: TextStyle(fontSize: 12)),),
+                //   Tab(child: Text('Pants', style: TextStyle(fontSize: 12)),),
+                //   Tab(child: Text('Dress', style: TextStyle(fontSize: 12)),),
+                //   Tab(child: Text('Bags', style: TextStyle(fontSize: 12)),),
+                //   Tab(child: Text('Shoes', style: TextStyle(fontSize: 12)),),
+                //   Tab(child: Text('Accessories', style: TextStyle(fontSize: 12)),),
+                // ],
+                ),
               )
             ];
           },

@@ -10,6 +10,7 @@ import 'package:wearit/components/widgets/list_tiles/user_profile_tile.dart';
 import 'package:wearit/features/auth/screens/login/login.dart';
 import 'package:wearit/features/personalization/screens/address/address.dart';
 import 'package:wearit/features/personalization/screens/profile/profile.dart';
+import 'package:wearit/features/store/controllers/category_controller.dart';
 import 'package:wearit/features/store/screens/cart/cart.dart';
 import 'package:wearit/features/store/screens/notification/notification.dart';
 import 'package:wearit/features/store/screens/order/order.dart';
@@ -67,6 +68,7 @@ class SettingsScreen extends StatelessWidget {
 
                   TSectionHeader(title: 'Application Settings'),
                   const SizedBox( height: TSizes.sectionGap, ),
+                  TSettingsMenuTile(icon: Iconsax.data, title: 'Load Data', subtitle: 'Load application datas.', onTap: () => CategoryController.instance.loadCategoryData(),),
                   TSettingsMenuTile(icon: Iconsax.moon, title: 'Dark mode', subtitle: 'Set the application appereance'),
                   TSettingsMenuTile(icon: Iconsax.image, title: 'Data Saver', subtitle: 'Reduce your data consumption when using cellular data. Images may be at lower resolution.', trailing: Switch(value: false, onChanged: (value) {}),),
                   TSettingsMenuTile(icon: Iconsax.location, title: 'Location Permission', subtitle: 'Allow to access your location', trailing: Switch(value: true, onChanged: (value) {}, ),),
